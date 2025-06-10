@@ -1,0 +1,390 @@
+2025-06-10T20:04:07.710+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Starting Javaee7SpringCoreDemoApplication using Java 17.0.11 with PID 2532 (/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes started by macbook in /Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo)
+2025-06-10T20:04:07.710+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : No active profile set, falling back to 1 default profile: "default"
+2025-06-10T20:04:07.839+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-10T20:04:07.840+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-10T20:04:07.840+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-10T20:04:07.846+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-10T20:04:07.846+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 134 ms
+2025-06-10T20:04:07.862+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.impl.HelloWorldServiceImpl   : HelloWorldServiceImpl created
+2025-06-10T20:04:07.862+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:04:07.863+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:04:07.863+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.c.HelloWorldController         : Bean HelloWorldController created
+2025-06-10T20:04:07.863+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:04:07.864+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:04:07.864+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.i.HelloWorldServiceImplTwo   : HelloWorldServiceImpl created
+2025-06-10T20:04:07.865+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:04:07.865+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:04:07.904+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-10T20:04:07.910+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-10T20:04:07.914+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Started Javaee7SpringCoreDemoApplication in 0.243 seconds (process running for 72.359)
+2025-06-10T20:04:07.915+06:30  INFO 2532 --- [javaee7-spring-core-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-06-10T20:04:16.956+06:30  INFO 2532 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-10T20:04:16.956+06:30  INFO 2532 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-10T20:04:16.957+06:30  INFO 2532 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-06-10T20:04:16.989+06:30  INFO 2532 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] c.t.j.c.d.c.HelloWorldController         : controller / handled Hello World
+2025-06-10T20:04:16.989+06:30  INFO 2532 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] c.t.j.c.d.c.HelloWorldController         : Count 1
+2025-06-10T20:04:16.990+06:30  INFO 2532 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] c.t.j.core.demo.common.UniqueRequest     : Unique request bean created 
+2025-06-10T20:04:16.993+06:30  INFO 2532 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] c.t.j.core.demo.common.UniqueRequest     : Unique Rest API
+2025-06-10T20:04:16.993+06:30  INFO 2532 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] c.t.j.c.d.c.HelloWorldController         : Catalog Default Environment
+2025-06-10T20:09:04.128+06:30  INFO 2532 --- [javaee7-spring-core-demo] [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-10T20:09:04.133+06:30  INFO 2532 --- [javaee7-spring-core-demo] [RMI TCP Connection(17)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-10T20:09:04.135+06:30  INFO 2532 --- [javaee7-spring-core-demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-10T20:11:42.105+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Starting Javaee7SpringCoreDemoApplication using Java 17.0.11 with PID 2910 (/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes started by macbook in /Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo)
+2025-06-10T20:11:42.107+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : No active profile set, falling back to 1 default profile: "default"
+2025-06-10T20:11:42.145+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-10T20:11:42.145+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-10T20:11:42.859+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-10T20:11:42.871+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-10T20:11:42.871+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-10T20:11:42.908+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-10T20:11:42.908+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 763 ms
+2025-06-10T20:11:42.988+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.impl.HelloWorldServiceImpl   : HelloWorldServiceImpl created
+2025-06-10T20:11:42.990+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:11:42.990+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:11:42.992+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.c.HelloWorldController         : Bean HelloWorldController created
+2025-06-10T20:11:42.993+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:11:42.994+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:11:42.995+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.i.HelloWorldServiceImplTwo   : HelloWorldServiceImpl created
+2025-06-10T20:11:42.995+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:11:42.996+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:11:43.230+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-10T20:11:43.256+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-10T20:11:43.265+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Started Javaee7SpringCoreDemoApplication in 1.542 seconds (process running for 7.057)
+2025-06-10T20:11:54.572+06:30  INFO 2910 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-10T20:11:54.573+06:30  INFO 2910 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-10T20:11:54.574+06:30  INFO 2910 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-10T20:13:22.226+06:30  INFO 2910 --- [javaee7-spring-core-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-06-10T20:13:22.229+06:30  INFO 2910 --- [javaee7-spring-core-demo] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-10T20:13:22.234+06:30  INFO 2910 --- [javaee7-spring-core-demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-10T20:13:22.300+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Starting Javaee7SpringCoreDemoApplication using Java 17.0.11 with PID 2910 (/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes started by macbook in /Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo)
+2025-06-10T20:13:22.301+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : No active profile set, falling back to 1 default profile: "default"
+2025-06-10T20:13:22.508+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-10T20:13:22.509+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-10T20:13:22.510+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-10T20:13:22.529+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-10T20:13:22.529+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 226 ms
+2025-06-10T20:13:22.530+06:30 ERROR 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'config' defined in file [/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes/com/turing/javaee7/core/demo/common/Config.class]: Failed to instantiate [com.turing.javaee7.core.demo.common.Config$$SpringCGLIB$$0]: Constructor threw exception
+2025-06-10T20:13:22.531+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-06-10T20:13:22.533+06:30  WARN 2910 --- [javaee7-spring-core-demo] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-06-10T20:13:22.539+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-10T20:13:22.562+06:30 ERROR 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:170) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at com.turing.javaee7.core.demo.Javaee7SpringCoreDemoApplication.main(Javaee7SpringCoreDemoApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) ~[spring-boot-3.5.0.jar:3.5.0]
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'config' defined in file [/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes/com/turing/javaee7/core/demo/common/Config.class]: Failed to instantiate [com.turing.javaee7.core.demo.common.Config$$SpringCGLIB$$0]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1357) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1242) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:413) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:230) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:221) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:106) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:95) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4464) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:438) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128) ~[spring-boot-3.5.0.jar:3.5.0]
+	... 18 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.turing.javaee7.core.demo.common.Config$$SpringCGLIB$$0]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:222) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1351) ~[spring-beans-6.2.7.jar:6.2.7]
+	... 65 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	HelloWorldServlet cannot be resolved to a type
+	Syntax error on token "}", delete this token
+
+	at com.turing.javaee7.core.demo.common.Config.<init>(Config.java:39) ~[classes/:na]
+	at com.turing.javaee7.core.demo.common.Config$$SpringCGLIB$$0.<init>(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:196) ~[spring-beans-6.2.7.jar:6.2.7]
+	... 67 common frames omitted
+
+2025-06-10T20:13:30.115+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Starting Javaee7SpringCoreDemoApplication using Java 17.0.11 with PID 2910 (/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes started by macbook in /Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo)
+2025-06-10T20:13:30.116+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : No active profile set, falling back to 1 default profile: "default"
+2025-06-10T20:13:30.235+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-10T20:13:30.236+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-10T20:13:30.236+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-10T20:13:30.244+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-06-10T20:13:30.244+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 127 ms
+2025-06-10T20:13:30.245+06:30 ERROR 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'config' defined in file [/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes/com/turing/javaee7/core/demo/common/Config.class]: Failed to instantiate [com.turing.javaee7.core.demo.common.Config$$SpringCGLIB$$0]: Constructor threw exception
+2025-06-10T20:13:30.246+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-06-10T20:13:30.247+06:30  WARN 2910 --- [javaee7-spring-core-demo] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-06-10T20:13:30.250+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-10T20:13:30.252+06:30 ERROR 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:170) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at com.turing.javaee7.core.demo.Javaee7SpringCoreDemoApplication.main(Javaee7SpringCoreDemoApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.0.jar:3.5.0]
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) ~[spring-boot-3.5.0.jar:3.5.0]
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'config' defined in file [/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes/com/turing/javaee7/core/demo/common/Config.class]: Failed to instantiate [com.turing.javaee7.core.demo.common.Config$$SpringCGLIB$$0]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1357) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1242) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:413) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:230) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:221) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:106) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:95) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4464) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:438) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128) ~[spring-boot-3.5.0.jar:3.5.0]
+	... 18 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.turing.javaee7.core.demo.common.Config$$SpringCGLIB$$0]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:222) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1351) ~[spring-beans-6.2.7.jar:6.2.7]
+	... 65 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token "}", delete this token
+
+	at com.turing.javaee7.core.demo.common.Config.<init>(Config.java:46) ~[classes/:na]
+	at com.turing.javaee7.core.demo.common.Config$$SpringCGLIB$$0.<init>(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:196) ~[spring-beans-6.2.7.jar:6.2.7]
+	... 67 common frames omitted
+
+2025-06-10T20:13:41.854+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Starting Javaee7SpringCoreDemoApplication using Java 17.0.11 with PID 2910 (/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes started by macbook in /Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo)
+2025-06-10T20:13:41.854+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : No active profile set, falling back to 1 default profile: "default"
+2025-06-10T20:13:41.979+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-10T20:13:41.980+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-10T20:13:41.980+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-10T20:13:41.987+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-06-10T20:13:41.987+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 132 ms
+2025-06-10T20:13:42.002+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.impl.HelloWorldServiceImpl   : HelloWorldServiceImpl created
+2025-06-10T20:13:42.002+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:13:42.002+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:13:42.003+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.c.HelloWorldController         : Bean HelloWorldController created
+2025-06-10T20:13:42.003+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:13:42.003+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:13:42.004+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.i.HelloWorldServiceImplTwo   : HelloWorldServiceImpl created
+2025-06-10T20:13:42.004+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:13:42.004+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:13:42.046+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-10T20:13:42.053+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-10T20:13:42.058+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Started Javaee7SpringCoreDemoApplication in 0.227 seconds (process running for 125.851)
+2025-06-10T20:13:42.059+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-06-10T20:13:50.576+06:30  INFO 2910 --- [javaee7-spring-core-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-06-10T20:13:50.577+06:30  INFO 2910 --- [javaee7-spring-core-demo] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-10T20:13:50.579+06:30  INFO 2910 --- [javaee7-spring-core-demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-10T20:13:50.643+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Starting Javaee7SpringCoreDemoApplication using Java 17.0.11 with PID 2910 (/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes started by macbook in /Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo)
+2025-06-10T20:13:50.644+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : No active profile set, falling back to 1 default profile: "default"
+2025-06-10T20:13:50.756+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-10T20:13:50.757+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-10T20:13:50.757+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-10T20:13:50.763+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-06-10T20:13:50.763+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 118 ms
+2025-06-10T20:13:50.776+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.impl.HelloWorldServiceImpl   : HelloWorldServiceImpl created
+2025-06-10T20:13:50.777+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:13:50.778+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:13:50.778+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.c.HelloWorldController         : Bean HelloWorldController created
+2025-06-10T20:13:50.778+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:13:50.779+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:13:50.779+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.i.HelloWorldServiceImplTwo   : HelloWorldServiceImpl created
+2025-06-10T20:13:50.780+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:13:50.780+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:13:50.815+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-10T20:13:50.823+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-10T20:13:50.827+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Started Javaee7SpringCoreDemoApplication in 0.203 seconds (process running for 134.619)
+2025-06-10T20:13:50.828+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-06-10T20:14:32.881+06:30  INFO 2910 --- [javaee7-spring-core-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-06-10T20:14:32.882+06:30  INFO 2910 --- [javaee7-spring-core-demo] [Thread-17] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-10T20:14:32.884+06:30  INFO 2910 --- [javaee7-spring-core-demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-10T20:14:32.946+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Starting Javaee7SpringCoreDemoApplication using Java 17.0.11 with PID 2910 (/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes started by macbook in /Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo)
+2025-06-10T20:14:32.946+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : No active profile set, falling back to 1 default profile: "default"
+2025-06-10T20:14:33.071+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-10T20:14:33.072+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-10T20:14:33.073+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-10T20:14:33.079+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-06-10T20:14:33.080+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 133 ms
+2025-06-10T20:14:33.094+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.impl.HelloWorldServiceImpl   : HelloWorldServiceImpl created
+2025-06-10T20:14:33.095+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:14:33.095+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:14:33.095+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.c.HelloWorldController         : Bean HelloWorldController created
+2025-06-10T20:14:33.096+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:14:33.096+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:14:33.096+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.i.HelloWorldServiceImplTwo   : HelloWorldServiceImpl created
+2025-06-10T20:14:33.097+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:14:33.097+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:14:33.134+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-10T20:14:33.141+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-10T20:14:33.145+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Started Javaee7SpringCoreDemoApplication in 0.222 seconds (process running for 176.938)
+2025-06-10T20:14:33.146+06:30  INFO 2910 --- [javaee7-spring-core-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-06-10T20:21:51.845+06:30  INFO 2910 --- [javaee7-spring-core-demo] [RMI TCP Connection(24)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-10T20:21:51.848+06:30  INFO 2910 --- [javaee7-spring-core-demo] [RMI TCP Connection(24)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-10T20:21:51.851+06:30  INFO 2910 --- [javaee7-spring-core-demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-10T20:22:06.796+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Starting Javaee7SpringCoreDemoApplication using Java 17.0.11 with PID 3366 (/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes started by macbook in /Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo)
+2025-06-10T20:22:06.798+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : No active profile set, falling back to 1 default profile: "default"
+2025-06-10T20:22:06.836+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-10T20:22:06.836+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-10T20:22:07.584+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-10T20:22:07.595+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-10T20:22:07.596+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-10T20:22:07.631+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-10T20:22:07.631+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 794 ms
+2025-06-10T20:22:07.712+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.impl.HelloWorldServiceImpl   : HelloWorldServiceImpl created
+2025-06-10T20:22:07.714+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:22:07.714+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:22:07.715+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.c.HelloWorldController         : Bean HelloWorldController created
+2025-06-10T20:22:07.717+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:22:07.717+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:22:07.719+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.i.HelloWorldServiceImplTwo   : HelloWorldServiceImpl created
+2025-06-10T20:22:07.719+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:22:07.719+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:22:07.951+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-10T20:22:07.978+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-10T20:22:07.987+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Started Javaee7SpringCoreDemoApplication in 1.559 seconds (process running for 7.046)
+2025-06-10T20:34:52.618+06:30  INFO 3366 --- [javaee7-spring-core-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-06-10T20:34:52.630+06:30  INFO 3366 --- [javaee7-spring-core-demo] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-10T20:34:52.642+06:30  INFO 3366 --- [javaee7-spring-core-demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-10T20:34:52.762+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Starting Javaee7SpringCoreDemoApplication using Java 17.0.11 with PID 3366 (/Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo/target/classes started by macbook in /Users/Project/Turing/Java/JavaEE7thBatch/javaee7-spring-core-demo)
+2025-06-10T20:34:52.763+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : No active profile set, falling back to 1 default profile: "default"
+2025-06-10T20:34:52.931+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-10T20:34:52.932+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-10T20:34:52.932+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-10T20:34:52.940+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-10T20:34:52.941+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 176 ms
+2025-06-10T20:34:52.961+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.impl.HelloWorldServiceImpl   : HelloWorldServiceImpl created
+2025-06-10T20:34:52.963+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:34:52.963+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:34:52.963+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.c.HelloWorldController         : Bean HelloWorldController created
+2025-06-10T20:34:52.964+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:34:52.964+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:34:52.965+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.d.s.i.HelloWorldServiceImplTwo   : HelloWorldServiceImpl created
+2025-06-10T20:34:52.965+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.javaee7.core.demo.common.Config      : Bean created by configuration
+2025-06-10T20:34:52.965+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] c.t.j.c.demo.bean.PrototypeBeanExample   : PrototypeBeanExample created 
+2025-06-10T20:34:53.015+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-06-10T20:34:53.022+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-10T20:34:53.032+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] t.j.c.d.Javaee7SpringCoreDemoApplication : Started Javaee7SpringCoreDemoApplication in 0.3 seconds (process running for 772.102)
+2025-06-10T20:34:53.034+06:30  INFO 3366 --- [javaee7-spring-core-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-06-10T20:39:54.546+06:30  INFO 3366 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-10T20:39:54.547+06:30  INFO 3366 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-10T20:39:54.548+06:30  INFO 3366 --- [javaee7-spring-core-demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-10T20:51:55.293+06:30  INFO 3366 --- [javaee7-spring-core-demo] [RMI TCP Connection(43)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-10T20:51:55.303+06:30  INFO 3366 --- [javaee7-spring-core-demo] [RMI TCP Connection(43)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-10T20:51:55.306+06:30  INFO 3366 --- [javaee7-spring-core-demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
