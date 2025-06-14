@@ -5,14 +5,12 @@
   layout:decorate="~{/fragments/layout.html}">
 <body>
 	<section layout:fragment="content">
-		<p th:text="${message}">placeholder message</p>
-		<h1>Welcome to spring with layout2...</h1>
-		<img th:src="@{/images/apple.jpeg}"/>
-		<p>2013+2 <span th:text="2013 + 2">1494</span>.</p>
+		<ol th:each="item : ${items}">
+			<li>
+				<span th:text="${item}"></span>
+			</li>
+		</ol>
 		
-		<div th:if="${admin} == true">
-			<h1>Admin</h1>
-		</div>
 	</section>
 </body>
 </html>

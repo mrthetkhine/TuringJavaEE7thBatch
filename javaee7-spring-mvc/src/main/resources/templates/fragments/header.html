@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security" >
+	<head>
+	
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css} " />
+	<style>
+		.error {
+			color:red;
+		}
+	  </style>
+	</head>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <div class="container-fluid">
+	    <a class="navbar-brand" href="#">
+			User-><span sec:authentication="name">Bob</span>
+		</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	        <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" href="/">Home</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="/books">Books</a>
+	        </li>
+			<!--
+			<div sec:authorize="hasRole('ROLE_ADMIN')">
+			  ADMIN ONLY CONTENT
+			</div>
+			-->
+			<li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')" >
+	          <a class="nav-link" href="/register">Register</a>
+	        </li>
+			<li class="nav-item">
+				<a class="nav-link" href="/?lang=en">En</a>
+	        </li>
+			<li class="nav-item">
+	          <a class="nav-link" href="/?lang=fr">Fr</a>
+	        </li>
+			
+			<li class="nav-item">
+	          <a class="nav-link" href="/logout">Logout</a>
+	        </li>
+	      </ul>
+	      <form class="d-flex">
+			
+	        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+	        <button class="btn btn-outline-success" type="submit">Search</button>
+	      </form>
+	    </div>
+	  </div>
+	</nav>
+</html>
