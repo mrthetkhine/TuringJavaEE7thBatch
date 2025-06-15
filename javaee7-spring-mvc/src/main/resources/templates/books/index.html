@@ -4,15 +4,26 @@
   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
   layout:decorate="~{/fragments/layout.html}">
 <body>
+	
 	<section layout:fragment="content">
+		<div th:text="${message}">
+			New Book have been saved
+		</div>
+		<a th:href="@{/books/new}"  class="btn btn-primary">New Book</a>
 		<table class="table stripped">
 			<thead>
+				<th>Id</th>
 				<th>Title</th>
 				<th>Author</th>
 				<th>Description</th>
+				<th>Price</th>
+				<th>Action</th>
 			</thead>
 			<tbody>
 				<tr th:each="book : ${books}">
+					<td>
+						<span th:text="${book.id}"></span>
+					</td> 
 					<td>
 						<span th:text="${book.title}"></span>
 					</td> 
@@ -21,6 +32,18 @@
 					</td> 
 					<td>
 						<span th:text="${book.description}"></span>
+					</td> 
+					<td>
+						<span th:text="${book.price}"></span>
+					</td> 
+					<td>
+						<a class="btn btn-primary" th:href="@{/books/edit/{id}(id=${book.id})}">
+							Edit
+						</a>	
+						&nbsp;
+						<a class="btn btn-primary" th:href="@{/books/delete/{id}(id=${book.id})}">
+							Delete
+						</a>	
 					</td> 
 				</tr>
 			</tbody>

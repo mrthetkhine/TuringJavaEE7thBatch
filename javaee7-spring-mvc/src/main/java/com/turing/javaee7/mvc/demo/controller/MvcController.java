@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.turing.javaee7.mvc.demo.service.DummyService;
 
@@ -42,10 +43,21 @@ public class MvcController {
 		log.info("MVC list controller");
 		return "list";
 	}
+	/*
 	@GetMapping("/products")
 	String productList(Model model)
 	{
 		
+		model.addAttribute("products",this.dummyService.getProducts());
+		log.info("MVC products controller");
+		return "product";
+	}
+	*/
+	@GetMapping("/products")
+	String requestParamter(Model model,@RequestParam("productId") String productId)
+	{
+		
+		log.info("Product with product Id "+productId);
 		model.addAttribute("products",this.dummyService.getProducts());
 		log.info("MVC products controller");
 		return "product";

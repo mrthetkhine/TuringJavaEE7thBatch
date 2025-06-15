@@ -38,4 +38,29 @@ public class BookServiceImpl implements BookService{
 		return this.mapper.mapList(books, BookDto.class);
 	}
 
+	@Override
+	public void saveBook(BookDto bookDto) {
+		Book book = this.mapper.map(bookDto, Book.class);
+		this.bookRepository.saveBook(book);
+	}
+
+	@Override
+	public BookDto getBookById(Long id) {
+		Book book = this.bookRepository.getBookById(id);
+		return this.mapper.map(book, BookDto.class);
+	}
+
+	@Override
+	public void updateBook(BookDto bookDto) {
+		Book book = this.mapper.map(bookDto, Book.class);
+		this.bookRepository.updateBook(book);
+		
+	}
+
+	@Override
+	public void deleteBookById(Long id) {
+		
+		this.bookRepository.deleteBookById(id);
+	}
+
 }
