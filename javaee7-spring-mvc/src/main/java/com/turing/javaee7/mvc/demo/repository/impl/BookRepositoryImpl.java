@@ -2,14 +2,18 @@ package com.turing.javaee7.mvc.demo.repository.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.turing.javaee7.mvc.demo.model.Book;
 import com.turing.javaee7.mvc.demo.repository.BookRepository;
 
+
 @Repository
-public class BookRepositoryImpl implements BookRepository{
+public class BookRepositoryImpl implements BookRepository
+{
 
 	List<Book> books = new ArrayList<>();
 	
@@ -31,16 +35,16 @@ public class BookRepositoryImpl implements BookRepository{
 		
 	}
 	@Override
-	public Book getBookById(Long id) {
+	public Optional<Book> getBookById(Long id) {
 		Book book = null;
 		for(Book b : this.books)
 		{
 			if(b.getId().longValue() == id)
 			{
-				return b;
+				return Optional.ofNullable(b);
 			}
 		}
-		return book;
+		return Optional.empty();
 	}
 	@Override
 	public void updateBook(Book book) {
@@ -59,8 +63,12 @@ public class BookRepositoryImpl implements BookRepository{
 	}
 	@Override
 	public void deleteBookById(Long id) {
-		Book book = this.getBookById(id);
-		this.books.remove(book);
+		Optional<Book> book = this.getBookById(id);
+		if(book.isPresent())
+		{
+			this.books.remove(book.get());
+		}
+		
 		
 	}
 

@@ -2,6 +2,7 @@ package com.turing.javaee7.mvc.demo.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,8 +47,16 @@ public class BookServiceImpl implements BookService{
 
 	@Override
 	public BookDto getBookById(Long id) {
-		Book book = this.bookRepository.getBookById(id);
-		return this.mapper.map(book, BookDto.class);
+		Optional<Book> book = this.bookRepository.getBookById(id);
+		if(book.isPresent())
+		{
+			return this.mapper.map(book.get(), BookDto.class);
+		}
+		else
+		{
+			return null;
+		}
+		
 	}
 
 	@Override
