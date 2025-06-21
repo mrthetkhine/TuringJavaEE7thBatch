@@ -99,12 +99,19 @@ public class BookController {
 	@GetMapping("/edit/{id}")
 	String editBook(@PathVariable("id") Long id,Model model)
 	{
-		BookDto dto = this.bookService.getBookById(id);
-		//dto.setAuthor("Dummy Author");
-		model.addAttribute("book",dto);
-		model.addAttribute("edit", true);
-		log.info("Edit book controller "+id);
-		return "books/new";
+		try
+		{
+			BookDto dto = this.bookService.getBookById(id);
+			//dto.setAuthor("Dummy Author");
+			model.addAttribute("book",dto);
+			model.addAttribute("edit", true);
+			log.info("Edit book controller "+id);
+			return "books/new";
+		}
+		catch(Exception e)
+		{
+			return "redirect:books/index";
+		}
 	}
 	@PostMapping("/edit")
 	String updateBook(@ModelAttribute("book") @Validated BookDto book,BindingResult result,Model model)
@@ -115,10 +122,18 @@ public class BookController {
 		}
 		else
 		{
-			log.info("Book save "+book);
-			this.bookService.updateBook(book);
-			model.addAttribute("message", "Book successfully updated");
-			return "redirect:/books";
+			try
+			{
+				log.info("Book save "+book);
+				this.bookService.updateBook(book);
+				model.addAttribute("message", "Book successfully updated");
+				return "redirect:/books";
+			}
+			catch(Exception e)
+			{
+				return "redirect:/books/index";
+			}
+			
 		}
 		log.info("Update book controller "+book.getId());
 		model.addAttribute("edit", true);
@@ -127,11 +142,18 @@ public class BookController {
 	@GetMapping("/delete/{id}")
 	String deleteBook(@PathVariable("id") Long id,Model model)
 	{
-		this.bookService.deleteBookById(id);
-		//dto.setAuthor("Dummy Author");
-		
-		model.addAttribute("message", "Book successfully deleted");
-		log.info("Delete book controller "+id);
-		return "redirect:/books";
+		try
+		{
+			this.bookService.deleteBookById(id);
+			//dto.setAuthor("Dummy Author");
+			
+			model.addAttribute("message", "Book successfully deleted");
+			log.info("Delete book controller "+id);
+			return "redirect:/books";
+		}
+		catch(Exception e )
+		{
+			return "redirect:books/index";
+		}
 	}
 }

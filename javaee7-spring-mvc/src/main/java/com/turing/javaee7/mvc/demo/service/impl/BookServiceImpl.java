@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.turing.javaee7.mvc.demo.commom.Mapper;
+import com.turing.javaee7.mvc.demo.controller.api.exception.NotFoundException;
 import com.turing.javaee7.mvc.demo.dto.BookDto;
 import com.turing.javaee7.mvc.demo.model.Book;
 import com.turing.javaee7.mvc.demo.repository.BookRepository;
@@ -46,7 +47,7 @@ public class BookServiceImpl implements BookService{
 	}
 
 	@Override
-	public BookDto getBookById(Long id) {
+	public BookDto getBookById(Long id)throws NotFoundException {
 		Optional<Book> book = this.bookRepository.getBookById(id);
 		if(book.isPresent())
 		{
@@ -54,22 +55,40 @@ public class BookServiceImpl implements BookService{
 		}
 		else
 		{
-			return null;
+			throw new NotFoundException("Book with id "+id+" not found");
 		}
 		
 	}
 
 	@Override
-	public void updateBook(BookDto bookDto) {
+	public void updateBook(BookDto bookDto)throws NotFoundException {
 		Book book = this.mapper.map(bookDto, Book.class);
-		this.bookRepository.updateBook(book);
+		Optional<Book> bookResult = this.bookRepository.getBookById(book.getId());
+		if(bookResult.isPresent())
+		{
+			this.bookRepository.updateBook(book);
+		}
+		else
+		{
+			throw new NotFoundException("Book with id "+bookDto.getId()+" not found");
+		}
+		
 		
 	}
 
 	@Override
-	public void deleteBookById(Long id) {
+	public void deleteBookById(Long id) throws NotFoundException {
 		
-		this.bookRepository.deleteBookById(id);
+		Optional<Book> book = this.bookRepository.getBookById(id);
+		if(book.isPresent())
+		{
+			this.bookRepository.deleteBookById(id);
+		}
+		else
+		{
+			throw new NotFoundException("Book with id "+id+" not found");
+		}
+		
 	}
 
 }

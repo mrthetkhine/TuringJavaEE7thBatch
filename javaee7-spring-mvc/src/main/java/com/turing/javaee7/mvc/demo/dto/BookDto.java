@@ -14,7 +14,7 @@ public class  BookDto {
 	
 	@NotNull
 	@NotEmpty(message="{required.book.title}")
-	@Size(min=3,max=10,message="{size.book.title}")
+	@Size(min=3,max=20,message="{size.book.title}")
 	private String title;
 	
 	@NotNull
