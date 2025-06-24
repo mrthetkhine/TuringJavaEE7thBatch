@@ -1,5 +1,7 @@
 package com.turing.javaee7.jpa.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @SpringBootTest
-public class MovieServiceTest {
+public class BookServiceTest {
 
 	@MockitoBean
 	BookDao bookDao;
@@ -62,11 +64,12 @@ public class MovieServiceTest {
 	{
 		MockitoAnnotations.openMocks(this);
 		Mockito.when(this.bookDao.findAll()).thenReturn(this.books);
-		List<Book> booksByDao = this.bookDao.findAll();
-		log.info("Book return by mock "+booksByDao.size());
+		//List<Book> booksByDao = this.bookDao.findAll();
+		//log.info("Book return by mock "+booksByDao.size());
 		
 		List<BookDto> books = this.bookService.getAllBook();
 		log.info("Size "+books.size());
+		assertEquals(2,books.size());
 	}
 
 	
