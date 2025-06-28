@@ -17,12 +17,19 @@ import lombok.Setter;
 @MappedSuperclass
 public class Human extends BaseEntity{
 
+	//Name name;
+	
 	@Column
 	String firstName;
 	
 	@Column
 	String lastName;
 	
+	//@Transient
+	@Formula(value = "CONCAT(first_name,\" \",last_name)")
+	String fullName;
+	
+		
 	@Column
 	Date birthday;
 	
@@ -30,18 +37,26 @@ public class Human extends BaseEntity{
 	@Enumerated(EnumType.ORDINAL)
 	Gender gender;
 	
-	//@Transient
-	@Formula(value = "CONCAT(first_name,\" \",last_name)")
-	String fullName;
+	
 	
 	@Formula(value = "TIMESTAMPDIFF(YEAR,birthday,CURDATE())")
 	Integer age;
 
+
+	/*
+	@Override
+	public String toString() {
+		return "Human [name=" + name + ", birthday=" + birthday + ", gender=" + gender + ", age=" + age + "]";
+	}*/
+
+	
 	@Override
 	public String toString() {
 		return "Human [firstName=" + firstName + ", lastName=" + lastName + ", birthday=" + birthday + ", gender="
 				+ gender + "]";
 	}
+	
+	
 	
 	
 }

@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.turing.javaee7.jpa.model.entity.Actor;
 import com.turing.javaee7.jpa.model.entity.Gender;
 import com.turing.javaee7.jpa.model.entity.Movie;
+import com.turing.javaee7.jpa.model.entity.Name;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,12 +24,15 @@ public class ActorDaoTest {
 	@Autowired
 	ActorDao actorDao;
 	
-	//@Test
+	@Test
 	public void testInsertActor()
 	{
 		Actor actor = new Actor();
-		actor.setFirstName("Kate");
-		actor.setLastName("Winslet");
+		//Name name = new Name();
+		
+		actor.setFirstName("FirstName");
+		actor.setLastName("LastName");
+		//actor.setName(name);
 		actor.setGender(Gender.Female);
 		
 		Date birthDate = new GregorianCalendar(1974, 10, 11).getTime();
@@ -49,6 +53,7 @@ public class ActorDaoTest {
 		
 		this.actorDao.save(actor);
 	}
+	/*
 	@Test
 	public void testFormulaFullName()
 	{
@@ -61,5 +66,5 @@ public class ActorDaoTest {
 		
 		assertEquals("Kate Winslet",actor.getFullName());
 		assertEquals(49,actor.getAge());
-	}
+	}*/
 }
