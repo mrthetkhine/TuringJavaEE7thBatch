@@ -5,7 +5,6 @@ import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -17,25 +16,17 @@ import lombok.ToString;
 @Getter
 @Setter
 @Entity
-public class Actor extends Human{
+public class Director extends Human{
 
 	@ToString.Exclude
 	@JsonIgnore
 	@ManyToMany(fetch = FetchType.LAZY, 
-			cascade= {
-					CascadeType.MERGE,
-					CascadeType.PERSIST
-			}, 
-				mappedBy = "actors")
-	private Set<Movie> movies = new HashSet<Movie>();
-
-	public Set<Movie> getMovies() {
-		return movies;
-	}
-
-	public void setMovies(Set<Movie> movies) {
-		this.movies = movies;
-	}
+				cascade= {
+						CascadeType.MERGE,
+						CascadeType.PERSIST
+				},
+				mappedBy = "directors")
+	private Set<Movie> movies = new HashSet<>();
 	
 	@Override
 	public String toString() {
