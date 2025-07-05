@@ -9,6 +9,7 @@ import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 
 import com.turing.javaee7.jpa.model.entity.Movie;
 import com.turing.javaee7.jpa.model.entity.MovieDetails;
@@ -17,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @SpringBootTest
+@Rollback(false)
 public class MovieDaoTest {
 	@Autowired
 	MovieDao movieDao;
@@ -24,32 +26,36 @@ public class MovieDaoTest {
 	@Autowired
 	MovieDetailsDao movieDetailsDao;
 	
-	//@Test
+	@Test
 	public void testInsertMovie()
 	{
-		Movie movie =new Movie();
-		movie.setTitle("Movie 4");
-		movie.setGenre("Drama");
-		movie.setYear(2009L);
+		for(int i=6;i< 20;i++)
+		{
+			Movie movie =new Movie();
+			movie.setTitle("Movie "+i);
+			movie.setGenre("Drama");
+			movie.setYear(2005L);
+			
+			MovieDetails movieDetails = new MovieDetails();
+			movieDetails.setDetails("Movie "+i+" details" );
+			
+			movie.setMovieDetails(movieDetails);
+			movieDetails.setMovie(movie);
+			
+			this.movieDao.save(movie);
+			
+			//this.movieDetailsDao.save(movieDetails);
+			
+			assertNotNull(movie.getId());
+			
+			Optional<Movie> savedMovie = this.movieDao.findById(movie.getId());
+			//assertEquals("Forrest Gump",savedMovie.get().getTitle());
+			
+			log.info("Movie "+movie);
+		}
 		
-		MovieDetails movieDetails = new MovieDetails();
-		movieDetails.setDetails("Movie 4 details" );
-		
-		movie.setMovieDetails(movieDetails);
-		movieDetails.setMovie(movie);
-		
-		this.movieDao.save(movie);
-		
-		//this.movieDetailsDao.save(movieDetails);
-		
-		assertNotNull(movie.getId());
-		
-		Optional<Movie> savedMovie = this.movieDao.findById(movie.getId());
-		//assertEquals("Forrest Gump",savedMovie.get().getTitle());
-		
-		log.info("Movie "+movie);
 	}
-	@Test
+	//@Test
 	public void testSelect()
 	{
 		Optional<Movie> movieResult = this.movieDao.findById(1L);
