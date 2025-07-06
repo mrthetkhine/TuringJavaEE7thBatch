@@ -7,6 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import com.turing.javaee7.jpa.dto.TitleAndGenre;
+import com.turing.javaee7.jpa.dto.TitleAndGenreC;
+import com.turing.javaee7.jpa.dto.TitleGenre;
 import com.turing.javaee7.jpa.model.entity.Book;
 import com.turing.javaee7.jpa.model.entity.Movie;
 
@@ -31,9 +34,41 @@ public interface MovieDao  extends JpaRepository<Movie,Long>{
 	
 	long deleteByGenre(String genre);
 	
+	
 	@Query("from Movie m where year=?1")
 	List<Movie> findMovieByYear(Long year);
 	
 	@Query(value="SELECT * FROM Movie m WHERE year=?1",nativeQuery=true)
 	List<Movie> findMovieByYearNative(Long year);
+	
+	@Query("SELECT m FROM Movie m")
+	List<Movie> getAllMovie();
+	
+	@Query("SELECT m FROM Movie m WHERE m.genre=?1 ")
+	List<Movie> findAllMovieWithGenre(String genre);
+	
+	@Query("SELECT COUNT(m) FROM Movie m WHERE m.genre=?1 ")
+	Long findMovieCountWithGenre(String genre);
+	
+	@Query("SELECT m.title AS title ,m.genre As genre FROM Movie m")
+	List<TitleAndGenre> findAllMovieWithTitleAndGenre();
+	
+	@Query("SELECT m.title AS title ,m.genre As genre FROM Movie m")
+	List<TitleGenre> findAllMovieWithTitleAndGenreWithClassProjection();
+	
+	@Query("select m fROM Movie m WHERE m.year > ?1 ")
+	List<Movie> findMovieWithYearGt(Long year);
+	
+	@Query("SELECT new com.turing.javaee7.jpa.dto.TitleAndGenreC(m.title, m.genre) FROM Movie m")
+	//@Query("SELECT m.title AS title ,m.genre As genre FROM Movie m")
+	List<TitleAndGenreC> findAllMovieWithTitleAndGenreC();
+	
+	@Query("SELECT m FROM Movie m JOIN m.actors a WHERE a.fullName =?1 ")
+	List<Movie> findAllMovieWithActorIn(String fullName);
+	
+	@Query("SELECT m FROM Movie m LEFT JOIN m.actors a ON a.id=?1")
+	List<Movie> findAllMovieWithActorInLeftJoinWithActorIn(Long id);
+	
+	@Query("SELECT m FROM Movie m ORDER BY m.year DESC")
+	List<Movie> findAllMovieOrderByYear();
 }
