@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -13,8 +15,10 @@ import com.turing.javaee7.jpa.dto.TitleGenre;
 import com.turing.javaee7.jpa.model.entity.Book;
 import com.turing.javaee7.jpa.model.entity.Movie;
 
+import jakarta.transaction.Transactional;
+
 @Repository
-public interface MovieDao  extends JpaRepository<Movie,Long>{
+public interface MovieDao  extends JpaRepository<Movie,Long>,JpaSpecificationExecutor<Movie>{
 
 	List<Movie> findByTitleIgnoreCase(String title);
 	List<Movie> findByYear(Long year);
@@ -71,4 +75,19 @@ public interface MovieDao  extends JpaRepository<Movie,Long>{
 	
 	@Query("SELECT m FROM Movie m ORDER BY m.year DESC")
 	List<Movie> findAllMovieOrderByYear();
+	
+	@Transactional
+	@Modifying
+	@Query("UPDATE Movie m SET m.genre=?2 WHERE m.id=?1")
+	int updateGnereByMovieId(Long id,String genre);
+	
+	@Transactional
+	@Modifying
+	@Query("DELETE FROM Movie m WHERE m.id=?1")
+	int deleteMovieById(Long id);
+	
+	@Modifying
+	@Transactional
+	@Query("INSERT Movie(title) VALUES (:title1),(:title2)")
+	int insertTwoMovie(String title1, String title2);
 }

@@ -101,7 +101,7 @@ public class MovieJpqlTest {
 		List<Movie> movies = this.movieDao.findAllMovieOrderByYear();
 		movies.forEach(System.out::println);
 	}
-	@Test
+	//@Test
 	public void testJpqlGroupBY()
 	{
 		List<MovieIdCommentCount> items = this.commentDao.getNoOfCommentByMovieId();
@@ -109,5 +109,32 @@ public class MovieJpqlTest {
 		{
 			log.info("Movie Id "+ data.movieId() + " Comment "+data.commentCount());
 		}
+	}
+	//@Test
+	public void testJpqlGroupByHaving()
+	{
+		List<MovieIdCommentCount> items = this.commentDao.getMovieWhichCommentIsGt(2);
+		for(MovieIdCommentCount data : items)
+		{
+			log.info("Movie Id "+ data.movieId() + " Comment "+data.commentCount());
+		}
+	}
+	//@Test
+	public void testUpdateQuery()
+	{
+		int count = this.movieDao.updateGnereByMovieId(11L, "Sci-Fi");
+		log.info("Movie updated "+count);
+	}
+	//@Test
+	public void testDeleteQuery()
+	{
+		int count = this.movieDao.deleteMovieById(24L);
+		log.info("Movie deleted "+count);
+	}
+	@Test
+	public void testInsertQuery()
+	{
+		int count = this.movieDao.insertTwoMovie("Title 3", "Title 4");
+		log.info("Movie inserted "+count);
 	}
 }
