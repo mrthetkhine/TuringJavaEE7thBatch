@@ -1,0 +1,35 @@
+<html>
+    <script>
+        let Module = {
+
+            order()
+            {
+                console.log("Order");
+            },
+            payment()
+            {
+                console.log('Payment');
+            }
+        };
+       
+
+        function logger(module)
+        {
+            for(let p in module)
+            {
+                if(typeof module[p] === 'function')
+                {
+                    let oldFn = module[p];
+                    module[p] = function()
+                    {
+                        console.log('Function ',p, ' was called');
+                        oldFn();
+                    }
+                }
+            }
+        }
+        logger(Module);
+        Module.payment();
+        Module.order();
+    </script>
+</html>

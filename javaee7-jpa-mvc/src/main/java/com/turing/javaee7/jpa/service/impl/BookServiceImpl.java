@@ -11,6 +11,9 @@ import com.turing.javaee7.jpa.dto.BookDto;
 import com.turing.javaee7.jpa.model.entity.Book;
 import com.turing.javaee7.jpa.service.BookService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class BookServiceImpl implements BookService{
 	
@@ -23,7 +26,9 @@ public class BookServiceImpl implements BookService{
 
 	@Override
 	public List<BookDto> getAllBook() {
+		log.info("Book service getAllBook started");
 		List<Book> books = this.bookDao.findAll();
+		log.info("Book service getAllBook before returned");
 		return this.mapper.mapList(books, BookDto.class);
 		
 	}
