@@ -20,9 +20,9 @@ import lombok.extern.slf4j.Slf4j;
 public class MovieSpecificationTest {
 
 	@Autowired
-	MovieDao movieDao;
+	MovieRepository movieDao;
 	
-	//@Test
+	@Test
 	public void testMovieInYear()
 	{
 		List<Movie> movies = this.movieDao.findAll(MovieSpecification.getAllMovieInYear(2009));
@@ -65,7 +65,7 @@ public class MovieSpecificationTest {
 		List<Movie> movies = this.movieDao.findAll(spec);
 		movies.forEach(System.out::println);
 	}
-	@Test
+	//@Test
 	public void testMovieWhereGenreIn()
 	{
 		List<String> genres = new ArrayList<>();

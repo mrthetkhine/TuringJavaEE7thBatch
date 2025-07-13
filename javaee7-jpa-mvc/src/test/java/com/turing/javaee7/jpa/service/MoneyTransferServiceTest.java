@@ -19,7 +19,7 @@ public class MoneyTransferServiceTest {
 	{
 		try
 		{
-			this.transferService.sendMoney(1L, 3L, 500);
+			this.transferService.sendMoney(1L, 2L, 1000);
 		}
 		catch(Exception e)
 		{

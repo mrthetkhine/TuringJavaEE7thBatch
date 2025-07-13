@@ -14,6 +14,7 @@ import org.springframework.test.annotation.Rollback;
 
 import com.turing.javaee7.jpa.dao.MovieDao;
 import com.turing.javaee7.jpa.dao.MovieDetailsDao;
+import com.turing.javaee7.jpa.dao.MovieRepository;
 import com.turing.javaee7.jpa.model.entity.Movie;
 import com.turing.javaee7.jpa.model.entity.MovieDetails;
 
@@ -25,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 @Rollback(false)
 public class MovieQueryMethodTest {
 	@Autowired
-	MovieDao movieDao;
+	MovieRepository movieDao;
 	
 	
 	

@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 @Rollback(false)
 public class MovieDaoTest {
 	@Autowired
-	MovieDao movieDao;
+	MovieRepository movieDao;
 	
 	@Autowired
 	MovieDetailsDao movieDetailsDao;

@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @Rollback(false)
 public class QbeTest {
 	@Autowired
-	MovieDao movieDao;
+	MovieRepository movieDao;
 	
 	//@Test
 	void testMovieWithGenre()

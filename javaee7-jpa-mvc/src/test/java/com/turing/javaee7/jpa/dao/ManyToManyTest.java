@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ManyToManyTest {
 
 	@Autowired
-	MovieDao movieDao;
+	MovieRepository movieDao;
 	
 	@Autowired
 	ActorDao actorDao;

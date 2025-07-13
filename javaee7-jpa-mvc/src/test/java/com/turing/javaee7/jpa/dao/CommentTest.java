@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @Rollback(false)
 public class CommentTest {
 	@Autowired
-	MovieDao movieDao;
+	MovieRepository movieDao;
 	
 	@Test
 	@Transactional
