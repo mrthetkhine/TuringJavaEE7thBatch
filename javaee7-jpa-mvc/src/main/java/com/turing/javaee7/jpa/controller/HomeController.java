@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/movies")
+@RequestMapping("/api/temp")
 public class HomeController {
 	
 	@Autowired
