@@ -7,11 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.turing.javaee7.jpa.common.Mapper;
+import com.turing.javaee7.jpa.controller.rest.exception.NotFoundException;
 import com.turing.javaee7.jpa.dao.MovieRepository;
 import com.turing.javaee7.jpa.dto.MovieDto;
 import com.turing.javaee7.jpa.model.entity.Movie;
+import com.turing.javaee7.jpa.model.entity.MovieDetails;
 import com.turing.javaee7.jpa.service.MovieService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class MovieServiceImpl implements MovieService{
 
@@ -28,7 +33,7 @@ public class MovieServiceImpl implements MovieService{
 	}
 
 	@Override
-	public MovieDto getMovieById(Long movieId) {
+	public MovieDto getMovieById(Long movieId) throws NotFoundException {
 		Optional<Movie> movie = this.movieRepository.findById(movieId);
 		if(movie.isPresent())
 		{
@@ -36,8 +41,66 @@ public class MovieServiceImpl implements MovieService{
 		}
 		else
 		{
-			return null;
+			throw new NotFoundException("Movie ID "+movieId+" Not found");
 		}
 	}
+
+	@Override
+	public MovieDto saveMovie(MovieDto movieDto) {
+		Movie movie = this.mapper.map(movieDto, Movie.class);
+		log.info("Save movie details "+movie.getMovieDetails().getDetails());
+		
+		MovieDetails movieDetails = movie.getMovieDetails();
+		movieDetails.setMovie(movie);
+		
+		movie = this.movieRepository.save(movie);
+		
+		MovieDto result= this.mapper.map(movie, MovieDto.class);
+		return result;
+	}
+
+	@Override
+	public MovieDto updateMovie(MovieDto movieDto) throws NotFoundException {
+		Optional<Movie> movieResult = this.movieRepository.findById(movieDto.getId());
+		if(movieResult.isPresent())
+		{
+			Movie movie = movieResult.get();
+			movie.setGenre(movieDto.getGenre());
+			movie.setTitle(movieDto.getTitle());
+			movie.setYear(movieDto.getYear());
+			
+			this.movieRepository.save(movie);
+			MovieDetails movieDetails = movie.getMovieDetails();
+			
+			movieDetails.setDetails(movieDto.getMovieDetails().getDetails());
+
+			return mapper.map(movie, MovieDto.class);
+		}
+		else
+		{
+			throw new NotFoundException("Movie ID "+movieDto.getId()+" Not found");
+		}
+		
+	}
+
+	@Override
+	public MovieDto deleteMovieById(Long movieId) throws NotFoundException {
+		Optional<Movie> movieResult = this.movieRepository.findById(movieId);
+		if(movieResult.isPresent())
+		{
+			Movie movie = movieResult.get();
+			
+			this.movieRepository.deleteById(movieId);
+			
+			MovieDto dto = this.mapper.map(movie, MovieDto.class);
+			return dto;
+		}
+		else
+		{
+			throw new NotFoundException("Movie ID "+movieId+" Not found");
+		}
+		
+	}
+	
 	
 }

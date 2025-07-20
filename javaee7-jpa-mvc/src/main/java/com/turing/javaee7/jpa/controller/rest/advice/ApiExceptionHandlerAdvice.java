@@ -11,6 +11,8 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+
 import com.turing.javaee7.jpa.controller.rest.exception.*;
 import com.turing.javaee7.jpa.controller.rest.common.*;
 
@@ -27,10 +29,11 @@ public class ApiExceptionHandlerAdvice{
         log.info("Not found exception handled "+ne.getMessage());
         String error = ne.getMessage(); 
         ApiErrorResponse apiError = 
-  		      new ApiErrorResponse(HttpStatus.NOT_FOUND, ErrorCode.INVALID_BOOK_ID.toString(), ne.getLocalizedMessage(), error);
+  		      new ApiErrorResponse(HttpStatus.NOT_FOUND, ErrorCode.NOT_FOUND.toString(), ne.getLocalizedMessage(), error);
   		    return new ResponseEntity<Object>(
   		      apiError, new HttpHeaders(), apiError.getStatus());
     }
+	
 	@ResponseStatus(HttpStatus.BAD_REQUEST)  // 400
     @ExceptionHandler(BeanValidationException.class)
     public ResponseEntity<Object> handleBeanValidationError(BeanValidationException be) {
@@ -45,6 +48,19 @@ public class ApiExceptionHandlerAdvice{
 
 	    ApiErrorResponse apiError = 
   		      new ApiErrorResponse(HttpStatus.BAD_REQUEST, ErrorCode.BEAN_VALIDATION_ERROR.toString(), be.getLocalizedMessage(), errorMessage);
+  		    return new ResponseEntity<Object>(
+  		      apiError, new HttpHeaders(), apiError.getStatus());
+    }
+	
+	@ResponseStatus(HttpStatus.BAD_REQUEST)  // 400
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<Object> handleInvalidMethodArgument(MethodArgumentTypeMismatchException be) {
+        log.info("MethodArgumentTypeMismatchException exception handled "+be.getMessage());
+       
+        log.info("MethodArgumentTypeMismatchException");
+	 
+	    ApiErrorResponse apiError = 
+  		      new ApiErrorResponse(HttpStatus.BAD_REQUEST, ErrorCode.BEAN_VALIDATION_ERROR.toString(), be.getLocalizedMessage(), be.getLocalizedMessage());
   		    return new ResponseEntity<Object>(
   		      apiError, new HttpHeaders(), apiError.getStatus());
     }

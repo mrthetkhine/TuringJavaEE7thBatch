@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.turing.javaee7.jpa.controller.rest.common.ApiSuccessResponse;
 import com.turing.javaee7.jpa.controller.rest.exception.BeanValidationException;
 import com.turing.javaee7.jpa.controller.rest.exception.NotFoundException;
+import com.turing.javaee7.jpa.dto.ActorDto;
 import com.turing.javaee7.jpa.dto.MovieDto;
 
 
@@ -27,11 +28,12 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 
 
-@RequestMapping("/api/movies")
-public interface MovieApi {
+@RequestMapping("/api/actors")
+public interface ActorApi {
 	@GetMapping
-	ResponseEntity<ApiSuccessResponse< List<MovieDto>>> getAllMovies();
+	ResponseEntity<ApiSuccessResponse< List<ActorDto>>> getAllActors();
 	
+	/*
 	@Operation(summary = "Get a movie by its id")
 	@ApiResponses(value = { 
 			  @ApiResponse(responseCode = "200", description = "Found the book", 
@@ -54,5 +56,6 @@ public interface MovieApi {
 	
 	@DeleteMapping(value = "/{movieId}")
 	ResponseEntity<ApiSuccessResponse<MovieDto>> deleteMovieById(@PathVariable Long movieId) throws NotFoundException ;
+	*/
 	
 }
