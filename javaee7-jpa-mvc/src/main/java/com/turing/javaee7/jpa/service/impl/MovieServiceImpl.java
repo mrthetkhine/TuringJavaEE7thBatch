@@ -1,15 +1,20 @@
 package com.turing.javaee7.jpa.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.turing.javaee7.jpa.common.Mapper;
 import com.turing.javaee7.jpa.controller.rest.exception.NotFoundException;
+import com.turing.javaee7.jpa.dao.ActorDao;
 import com.turing.javaee7.jpa.dao.MovieRepository;
+import com.turing.javaee7.jpa.dto.ActorDto;
 import com.turing.javaee7.jpa.dto.MovieDto;
+import com.turing.javaee7.jpa.model.entity.Actor;
 import com.turing.javaee7.jpa.model.entity.Movie;
 import com.turing.javaee7.jpa.model.entity.MovieDetails;
 import com.turing.javaee7.jpa.service.MovieService;
@@ -22,6 +27,9 @@ public class MovieServiceImpl implements MovieService{
 
 	@Autowired
 	MovieRepository movieRepository;
+	
+	@Autowired
+	ActorDao actorDao;
 	
 	@Autowired
 	Mapper mapper;
@@ -100,6 +108,56 @@ public class MovieServiceImpl implements MovieService{
 			throw new NotFoundException("Movie ID "+movieId+" Not found");
 		}
 		
+	}
+
+	@Override
+	public List<ActorDto> getActorsInMovie(Long movieId) throws NotFoundException {
+		Optional<Movie> movieResult = this.movieRepository.findById(movieId);
+		if(movieResult.isPresent())
+		{
+			Movie movie = movieResult.get();
+			Set<Actor> actors =  movie.getActors();
+			
+			ArrayList<Actor> actorList= new ArrayList<>();
+			for(Actor act : actors)
+			{
+				actorList.add(act);
+			}
+			return this.mapper.mapList(actorList, ActorDto.class);
+		}
+		else
+		{
+			throw new NotFoundException("Movie ID "+movieId+" Not found");
+		}
+	}
+
+	@Override
+	public ActorDto assignActorToMovie(Long movieId, Long actorId) throws NotFoundException {
+		Optional<Movie> movieResult = this.movieRepository.findById(movieId);
+		if(movieResult.isPresent())
+		{
+			Optional<Actor> actorResult = this.actorDao.findById(actorId);
+			if(actorResult.isPresent())
+			{
+				Movie movie = movieResult.get();
+				Actor actor =  actorResult.get();
+				
+				movie.getActors().add(actor);
+				actor.getMovies().add(movie);
+				
+				this.movieRepository.save(movie);
+				return this.mapper.map(actor, ActorDto.class);
+			}
+			else
+			{
+				throw new NotFoundException("Movie ID "+movieId+" Not found");
+			}
+			
+		}
+		else
+		{
+			throw new NotFoundException("Movie ID "+movieId+" Not found");
+		}
 	}
 	
 	

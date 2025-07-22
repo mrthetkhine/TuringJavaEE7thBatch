@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.turing.javaee7.jpa.controller.rest.api.MovieApi;
 import com.turing.javaee7.jpa.controller.rest.exception.BeanValidationException;
 import com.turing.javaee7.jpa.controller.rest.exception.NotFoundException;
+import com.turing.javaee7.jpa.dto.ActorDto;
 import com.turing.javaee7.jpa.dto.MovieDto;
 import com.turing.javaee7.jpa.service.MovieService;
 
@@ -81,6 +82,20 @@ public class MovieApiController implements MovieApi{
 	public ResponseEntity<ApiSuccessResponse<MovieDto>> deleteMovieById(Long movieId) throws NotFoundException {
 		MovieDto movieDto = this.movieService.deleteMovieById(movieId);
 		return apiUtil.buildSucessResponse(HttpStatus.OK, SuccessCode.SUCESS.toString(), "Delete movie byID ", movieDto);
+	}
+
+	@Override
+	public ResponseEntity<ApiSuccessResponse<List<ActorDto>>> getActorsInMovie(Long movieId) throws NotFoundException {
+		List<ActorDto> actors = this.movieService.getActorsInMovie(movieId);
+		return apiUtil.buildSucessResponse(HttpStatus.OK, 
+				SuccessCode.SUCESS.toString(), "Get all actor in movie ", actors);
+	}
+
+	@Override
+	public ResponseEntity<ApiSuccessResponse<ActorDto>> assignActorToMovie(Long movieId,Long actorId) throws NotFoundException {
+		ActorDto actorDto = this.movieService.assignActorToMovie(movieId, actorId);
+		return apiUtil.buildSucessResponse(HttpStatus.OK, 
+				SuccessCode.SUCESS.toString(), "Assigned actor to movie ", actorDto);
 	}
 
 }

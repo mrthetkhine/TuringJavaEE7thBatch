@@ -9,4 +9,6 @@ public interface MovieService {
 	MovieDto saveMovie(MovieDto movieDto);
 	MovieDto updateMovie(MovieDto movieDto) throws NotFoundException;
 	MovieDto deleteMovieById(Long movieId) throws NotFoundException;
+	List<ActorDto> getActorsInMovie(Long movieId) throws NotFoundException;
+	ActorDto assignActorToMovie(Long movieId,Long actorId) throws NotFoundException;
 }

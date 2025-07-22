@@ -33,29 +33,19 @@ public interface ActorApi {
 	@GetMapping
 	ResponseEntity<ApiSuccessResponse< List<ActorDto>>> getAllActors();
 	
-	/*
-	@Operation(summary = "Get a movie by its id")
-	@ApiResponses(value = { 
-			  @ApiResponse(responseCode = "200", description = "Found the book", 
-			    content = { @Content(mediaType = "application/json", 
-			      schema = @Schema(implementation = MovieDto.class)) }),
-			  @ApiResponse(responseCode = "400", description = "Invalid id supplied", 
-			    content = @Content), 
-			  @ApiResponse(responseCode = "404", description = "Movie not found", 
-			    content = @Content) })
-	@GetMapping(value = "/{movieId}")
-	ResponseEntity<ApiSuccessResponse<MovieDto>> getMovieById(@PathVariable Long movieId) throws NotFoundException ;
+	@GetMapping(value = "/{actorId}")
+	ResponseEntity<ApiSuccessResponse<ActorDto>> getActorById(@PathVariable Long actorId) throws NotFoundException ;
 	
 	@PostMapping
-	ResponseEntity<ApiSuccessResponse<MovieDto>> createMovie(@Valid @RequestBody MovieDto movieDto, BindingResult result)throws BeanValidationException;
+	ResponseEntity<ApiSuccessResponse<ActorDto>> saveActor(@Valid @RequestBody ActorDto actorDo, BindingResult result)throws BeanValidationException;
 	
-	@PutMapping(value = "/{movieId}")
-	ResponseEntity<ApiSuccessResponse<MovieDto>> updateMovie(@PathVariable Long movieId,
-				@Valid @RequestBody MovieDto movieDto, 
+	@PutMapping(value = "/{actorId}")
+	ResponseEntity<ApiSuccessResponse<ActorDto>> updateActor(@PathVariable Long actorId,
+				@Valid @RequestBody ActorDto actorDto, 
 				BindingResult result)throws NotFoundException, BeanValidationException;
 	
-	@DeleteMapping(value = "/{movieId}")
-	ResponseEntity<ApiSuccessResponse<MovieDto>> deleteMovieById(@PathVariable Long movieId) throws NotFoundException ;
-	*/
+	@DeleteMapping(value = "/{actorId}")
+	ResponseEntity<ApiSuccessResponse<ActorDto>> deleteActorById(@PathVariable Long actorId) throws NotFoundException ;
+	
 	
 }

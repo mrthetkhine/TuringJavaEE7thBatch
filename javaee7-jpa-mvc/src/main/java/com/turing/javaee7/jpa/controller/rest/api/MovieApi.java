@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.turing.javaee7.jpa.controller.rest.common.ApiSuccessResponse;
 import com.turing.javaee7.jpa.controller.rest.exception.BeanValidationException;
 import com.turing.javaee7.jpa.controller.rest.exception.NotFoundException;
+import com.turing.javaee7.jpa.dto.ActorDto;
 import com.turing.javaee7.jpa.dto.MovieDto;
 
 
@@ -54,5 +55,11 @@ public interface MovieApi {
 	
 	@DeleteMapping(value = "/{movieId}")
 	ResponseEntity<ApiSuccessResponse<MovieDto>> deleteMovieById(@PathVariable Long movieId) throws NotFoundException ;
+	
+	@GetMapping(value = "/{movieId}/actors")
+	ResponseEntity<ApiSuccessResponse< List<ActorDto>>> getActorsInMovie(@PathVariable Long movieId) throws NotFoundException ;
+	
+	@PostMapping(value = "/{movieId}/assignment/actors/{actorId}")
+	ResponseEntity<ApiSuccessResponse< ActorDto>> assignActorToMovie(@PathVariable Long movieId,@PathVariable Long actorId) throws NotFoundException ;
 	
 }
