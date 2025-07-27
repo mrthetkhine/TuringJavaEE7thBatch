@@ -1,0 +1,1218 @@
+{
+	"info": {
+		"_postman_id": "23adc8d8-05cc-42e1-86c6-04485d2ae9e2",
+		"name": "JavaEE7thBatch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5339096",
+		"_collection_link": "https://workulture.postman.co/workspace/React-Workspace~d09f8cbf-4395-49e4-8bff-990056c02477/collection/5339096-23adc8d8-05cc-42e1-86c6-04485d2ae9e2?action=share&source=collection_link&creator=5339096"
+	},
+	"item": [
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "GetBookById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/books/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetBookByIdSuccess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/books/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"books",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Sep 2024 12:08:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"Title1 \",\n    \"author\": \"Author 1\",\n    \"description\": \"Description1\"\n}"
+						},
+						{
+							"name": "GetBookByIdNotFound",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/books/10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"books",
+										"10"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Sep 2024 12:09:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"errorCode\": \"INVALID_BOOK_ID_TYPE\",\n    \"message\": \"Book 10 not found\",\n    \"errors\": [\n        \"Book 10 not found\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateBook",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n    \"id\": 5,\n    \"title\": \"Title 5 update\",\n    \"author\": \"Author 5 update\",\n    \"description\": \"Author 5 update\",\n    \"price\":100\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/books/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateBook",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\":\"Author 7\",\n    \"title\":\"Title 7\",\n    \"description\":\"Description seven\",\n    \"price\":300\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/books",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CreateBook",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"author\":\"Author six\",\n    \"title\":\"Author six\",\n    \"description\":\"Descrition six\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/books",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Sep 2024 13:10:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"errorCode\": \"BEAN_VALIDATION_ERROR\",\n    \"message\": null,\n    \"errors\": [\n        \"Book title should be with 3 to 100 characters\",\n        \"Book title is required\"\n    ]\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"author\":\"5\",\n    \"title\":\"\",\n    \"description\":\"Descrition five\",\n    \"price\":300\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/books",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"books"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 21 Jun 2025 13:39:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"code\": \"BEAN_VALIDATION_ERROR\",\n    \"message\": null,\n    \"errors\": [\n        \"Book title should be 3 to 100 characters\",\n        \"Book title is required\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteBook",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/books/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllBook",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/books",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SuccessResponse",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/books",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"books"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 21 Jun 2025 13:16:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"code\": \"SUCESS\",\n    \"message\": \"Book list ok\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"title\": \"1984\",\n            \"author\": \"George Owell\",\n            \"description\": \"About political system\",\n            \"price\": 200\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Victor Frankel\",\n            \"author\": \"Man's Search for Meaning\",\n            \"description\": \"Book about survival & meaning of life\",\n            \"price\": 300\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Toe Te Chin\",\n            \"author\": \"Unknown\",\n            \"description\": \"Lifestyle\",\n            \"price\": 300\n        },\n        {\n            \"id\": 5,\n            \"title\": \"TItle 4\",\n            \"author\": \"Author 4\",\n            \"description\": \"Description 4\",\n            \"price\": 500\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "GetPostById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/posts/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllPost",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/posts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePost",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"title\":\"Three\",\n    \"content\":\"Post 3 update\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/posts/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePost",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/posts/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePost",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\":\"Post 6 content\",\n    \"title\":\"Post 6\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/posts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "GetMovieById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetMovieById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/movies/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Jul 2025 14:24:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"code\": \"SUCESS\",\n    \"message\": \"Get movie byID \",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Forrest Gump\",\n        \"year\": 2009,\n        \"genre\": \"Drama\",\n        \"movieDetails\": {\n            \"details\": \"Forrest Gump Details\"\n        }\n    },\n    \"responseAt\": \"2025-07-22T14:24:14.689+00:00\"\n}"
+						},
+						{
+							"name": "NOT FOUND",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/movies/100",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"movies",
+										"100"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Jul 2025 14:24:22 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"code\": \"NOT_FOUND\",\n    \"message\": \"Movie ID 100 Not found\",\n    \"responseAt\": \"2025-07-22T14:24:22.693+00:00\",\n    \"errors\": [\n        \"Movie ID 100 Not found\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GetAllActorInMovie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies/1/actors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"1",
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllMovie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllMovieByYear",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies/year/2010",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"year",
+								"2010"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllMovieByTitle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies/title?title=titanic",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"title"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "titanic"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllMovieByGenreAndYear",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies/search/genre/year?genre=drama&year=1990",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"search",
+								"genre",
+								"year"
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": "drama"
+								},
+								{
+									"key": "year",
+									"value": "1990"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllMovieByGenreOrYear",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies/search/genreOr/year?genre=drama&year=2010",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"search",
+								"genreOr",
+								"year"
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": "drama"
+								},
+								{
+									"key": "year",
+									"value": "2010"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllMovieDistinctGenre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies/genres?genre=Sci-Fi",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"genres"
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": "Sci-Fi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllMovieDistinctGenre Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/movies/search/year/between?startYear=1990&endYear=2011",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"search",
+								"year",
+								"between"
+							],
+							"query": [
+								{
+									"key": "startYear",
+									"value": "1990"
+								},
+								{
+									"key": "endYear",
+									"value": "2011"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateMovie",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 36,\n    \"title\": \"Test movie 36 updated\",\n    \"year\": 2010,\n    \"genre\": \"Sci-Fi\",\n    \"movieDetails\": {\n        \"details\": \"Test movie 36 details updated\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/movies/36",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePost",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/movies/35",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"35"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateMovie",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Movie 31\",\n    \"year\":2010,\n    \"genre\":\"Sci-Fi\",\n    \"movieDetails\":{\n        \"details\":\"Movie 31\"\n    } \n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AssignActorToMovie",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/movies/1/assignment/actors/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"movies",
+								"1",
+								"assignment",
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Actors",
+			"item": [
+				{
+					"name": "CreateActor",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\":\"Actor \",\n    \"lastName\":\"Six\",\n    \"gender\":\"Female\",\n    \"birthday\":\"2005-07-22T13:28:09.669+00:00\"\n   \n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/actors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateActor",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":7,\n    \"firstName\":\"Actor \",\n    \"lastName\":\"Seven\",\n    \"gender\":\"Male\",\n    \"birthday\":\"2025-07-22T13:28:09.669+00:00\"\n   \n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/actors/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"actors",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetActorById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/actors/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"actors",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllActors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/actors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"actors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "GetAdmindata",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MzYyMTk4NiwiZXhwIjoxNzUzNjU3OTg2fQ.ExwsqPa6isIZlHgXT4vMkp7toVVC5wELw75-ej8QRr_EWKx09_35l5W73-ftVkTQKJZXIOgZTbr4NnZJCm6q9w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/admin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeleteActor",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/actors/7",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"actors",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

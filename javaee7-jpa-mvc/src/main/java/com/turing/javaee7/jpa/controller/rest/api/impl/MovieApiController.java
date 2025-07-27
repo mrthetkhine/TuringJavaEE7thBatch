@@ -5,7 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.turing.javaee7.jpa.controller.rest.api.MovieApi;
@@ -31,8 +35,17 @@ public class MovieApiController implements MovieApi{
 	@Autowired
 	ApiUtil apiUtil;
 	
+	
+	
+	
 	@Override
 	public ResponseEntity<ApiSuccessResponse< List<MovieDto>>> getAllMovies() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String currentPrincipalName = authentication.getName();
+		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+		
+		log.info("Loggined username "+currentPrincipalName);
+		log.info("User has authorities: " + userDetails.getAuthorities());
 		
 		List<MovieDto> movies =this.movieService.getAllMovies();
 		return apiUtil.buildSucessResponse(HttpStatus.OK, 
