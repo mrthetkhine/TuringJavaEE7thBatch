@@ -3583,3 +3583,11 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 2025-07-27T20:24:10.241+06:30  INFO 12390 --- [javaee7-jpa-mvc] [http-nio-8080-exec-4] c.turing.javaee7.jpa.aop.LoggingAspect   : In Aspect within before execution(ResponseEntity com.turing.javaee7.jpa.controller.rest.api.impl.AdminApiController.getAdminData())
 2025-07-27T20:24:10.241+06:30  INFO 12390 --- [javaee7-jpa-mvc] [http-nio-8080-exec-4] c.t.j.j.c.r.api.impl.AdminApiController  : Admin API 
 2025-07-27T20:24:10.242+06:30  INFO 12390 --- [javaee7-jpa-mvc] [http-nio-8080-exec-4] c.turing.javaee7.jpa.aop.LoggingAspect   : In Aspect within before execution(ResponseEntity com.turing.javaee7.jpa.controller.rest.common.ApiUtil.buildSucessResponse(HttpStatus,String,String,Object))
+2025-07-27T21:07:43.227+06:30  WARN 12390 --- [javaee7-jpa-mvc] [HikariPool-9:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Thread starvation or clock leap detected (housekeeper delta=30m463ms).
+2025-07-27T21:16:21.044+06:30  WARN 12390 --- [javaee7-jpa-mvc] [HikariPool-9:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Thread starvation or clock leap detected (housekeeper delta=3m37s747ms).
+2025-07-27T21:19:22.091+06:30  INFO 12390 --- [javaee7-jpa-mvc] [RMI TCP Connection(39)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-07-27T21:19:22.106+06:30  INFO 12390 --- [javaee7-jpa-mvc] [RMI TCP Connection(39)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-27T21:19:22.110+06:30  INFO 12390 --- [javaee7-jpa-mvc] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-27T21:19:22.117+06:30  INFO 12390 --- [javaee7-jpa-mvc] [RMI TCP Connection(39)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-27T21:19:22.120+06:30  INFO 12390 --- [javaee7-jpa-mvc] [RMI TCP Connection(39)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2025-07-27T21:19:22.134+06:30  INFO 12390 --- [javaee7-jpa-mvc] [RMI TCP Connection(39)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
