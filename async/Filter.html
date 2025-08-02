@@ -1,0 +1,34 @@
+<html>
+    <script>
+        let arr = [1,2,3,4,5];
+        let arr2 = arr.filter(x=> x%2==0);
+        console.log('arr ',arr);
+        console.log('arr2 ',arr2);
+        
+        let students = [
+            {
+                name : "Aung Aung",
+                age:20,
+                gender:'Male',
+            },
+            {
+                name : "Hla Hla",
+                age:22,
+                gender:'Female',
+            },
+            {
+                name :"Mya Mya",
+                age:21,
+                gender:'Female',
+            },
+            {
+                name:"Soe Win",
+                age:20,
+                gender:'Male',
+            }
+        ]
+        let males = students.filter(student=>student.gender=='Male')
+                            .map(student=>student.name  );
+        console.log('males ',males);
+    </script>
+</html>
