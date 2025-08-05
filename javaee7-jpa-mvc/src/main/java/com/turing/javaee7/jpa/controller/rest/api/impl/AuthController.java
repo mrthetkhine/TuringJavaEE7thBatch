@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.turing.javaee7.jpa.dto.UserDto;
 import com.turing.javaee7.jpa.service.AuthService;
 
+import lombok.extern.slf4j.Slf4j;
 
+
+@Slf4j
 @RestController
 @RequestMapping(path = "/api/auth")
 public class AuthController {
@@ -24,9 +27,10 @@ public class AuthController {
 	@GetMapping(value="/hello")
 	String hello()
 	{
+		log.info("Thread Name " + Thread.currentThread().getName());
 		try
 		{
-			Thread.sleep(6000);
+			Thread.sleep(3000);
 		}
 		catch(Exception e)
 		{
