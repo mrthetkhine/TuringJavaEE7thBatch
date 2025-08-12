@@ -1,0 +1,138 @@
+mongosh
+
+//show all databases;
+show databases;
+
+//switch database
+use test;
+
+//cls;
+
+//show all collections
+show collections;
+
+db.todos.insertOne({
+    "userId": 1,
+    "id": 1,
+    "title": "delectus aut autem",
+    "completed": false
+});
+db.todos.insertOne( {
+    "id": 2,
+    "title": "quis ut nam facilis et officia qui",
+});
+
+//query all todos 
+db.todos.find();
+
+db.todos.insertMany([
+    {
+    "userId": 1,
+    "id": 3,
+    "title": "fugiat veniam minus",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 4,
+    "title": "et porro tempora",
+    "completed": true
+  }
+]);
+
+db.movies.insertOne( {
+    "title": "titanic",
+    "genre":["Drama"],
+    "actors":[
+        {
+            "firstName":"Leonardo",
+            "lastName":"Decaprio",
+            "gender":"Male",
+        },
+         {
+            "firstName":"Kate",
+            "lastName":"Winselect",
+            "gender":"female",
+        },
+    ]
+});
+
+
+db.inventory.insertMany([
+   { item: "journal", qty: 25, size: { h: 14, w: 21, uom: "cm" }, status: "A" },
+   { item: "notebook", qty: 50, size: { h: 8.5, w: 11, uom: "in" }, status: "A" },
+   { item: "paper", qty: 100, size: { h: 8.5, w: 11, uom: "in" }, status: "D" },
+   { item: "planner", qty: 75, size: { h: 22.85, w: 30, uom: "cm" }, status: "D" },
+   { item: "postcard", qty: 45, size: { h: 10, w: 15.25, uom: "cm" }, status: "A" }
+]);
+
+//find all
+db.inventory.find( {} )
+
+//find inventory with status = 'D'
+db.inventory.find( {
+    'status':'D'
+})
+
+//find inventory with status = 'D' AND item=  'paper'
+db.inventory.find( {
+    'status':'D',
+    'item':'paper'
+})
+
+//find inventory with status = 'D' OR item=  'journal'
+db.inventory.find( {
+    $or:[
+        {
+            'status':'D',
+        },
+        {
+            'item':'journal'
+        }
+    ]
+})
+
+//find inventory with status = 'A' OR  status = 'A'
+db.inventory.find( {
+    $or:[
+        {
+            'status':'D',
+        },
+        {
+            'status':'A',
+        }
+    ]
+});
+
+db.inventory.find( {
+    "status":{
+        $in:["A","D"]
+    }
+});
+
+db.inventory.find( {
+    "qty":{
+        $gte:45
+    }
+});
+
+db.inventory.insertMany( [
+   { item: "journal", qty: 25, size: { h: 14, w: 21, uom: "cm" }, status: "A" },
+   { item: "notebook", qty: 50, size: { h: 8.5, w: 11, uom: "in" }, status: "A" },
+   { item: "paper", qty: 100, size: { h: 8.5, w: 11, uom: "in" }, status: "D" },
+   { item: "planner", qty: 75, size: { h: 22.85, w: 30, uom: "cm" }, status: "D" },
+   { item: "postcard", qty: 45, size: { h: 10, w: 15.25, uom: "cm" }, status: "A" }
+]);
+
+db.inventory.find( { "size.uom": "in" } )
+
+db.inventory.find( { "size.h": { $lt: 15 } } )
+
+//problematic query with order
+db.inventory.find( { size: { h: 14, w: 21, uom: "cm" } } )
+
+//no result
+db.inventory.find( { size: { w: 21, h: 14, uom: "cm" } } )
+
+//get result
+db.inventory.find( { "size.w":21,"size.h":14} )
