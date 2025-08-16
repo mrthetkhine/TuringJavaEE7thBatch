@@ -1,6 +1,6 @@
 package com.turing.javaee7.jpa;
 
-public class DealyUtil {
+public class DelayUtil {
 	public static void delay(long ms)
 	{
 		try

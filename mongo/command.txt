@@ -136,3 +136,79 @@ db.inventory.find( { size: { w: 21, h: 14, uom: "cm" } } )
 
 //get result
 db.inventory.find( { "size.w":21,"size.h":14} )
+
+db.inventory.insertMany([
+   { item: "journal", qty: 25, tags: ["blank", "red"], dim_cm: [ 14, 21 ] },
+   { item: "notebook", qty: 50, tags: ["red", "blank"], dim_cm: [ 14, 21 ] },
+   { item: "paper", qty: 100, tags: ["red", "blank", "plain"], dim_cm: [ 14, 21 ] },
+   { item: "planner", qty: 75, tags: ["blank", "red"], dim_cm: [ 22.85, 30 ] },
+   { item: "postcard", qty: 45, tags: ["blue"], dim_cm: [ 10, 15.25 ] }
+]);
+
+//array exact match
+db.inventory.find( { tags: ["red", "blank"] } )
+
+//array containing red and blank
+db.inventory.find( { tags: { $all: ["red", "blank"] } } )
+
+//find element
+db.inventory.find( { tags: "red" } )
+
+db.inventory.find( { dim_cm: { $gt: 25 } } )
+
+//Problem
+db.inventory.find( { dim_cm: { $gt: 15, $lt: 20 } } )
+
+    {
+    _id: ObjectId('68a0736ca072ead7192b1aef'),
+    item: 'notebook',
+    qty: 50,
+    tags: [ 'red', 'blank' ],
+    dim_cm: [ 14, 21 ]
+  },
+
+//element whose value is >22 and lt 30
+db.inventory.find( { dim_cm: { $elemMatch: { $gt: 22, $lt: 30 } } } )
+
+db.inventory.find( { "dim_cm.1": { $gt: 25 } } )
+
+//find by length 
+db.inventory.find( { "tags": { $size: 3 } } )
+
+//size >=2
+db.inventory.find({'tags.1': {$exists: true}})
+
+//embedded documents
+db.inventory.insertMany( [
+   { item: "journal", instock: [ { warehouse: "A", qty: 5 }, { warehouse: "C", qty: 15 } ] },
+   { item: "notebook", instock: [ { warehouse: "C", qty: 5 } ] },
+   { item: "paper", instock: [ { warehouse: "A", qty: 60 }, { warehouse: "B", qty: 15 } ] },
+   { item: "planner", instock: [ { warehouse: "A", qty: 40 }, { warehouse: "B", qty: 5 } ] },
+   { item: "postcard", instock: [ { warehouse: "B", qty: 15 }, { warehouse: "C", qty: 35 } ] }
+]);
+
+//exact property, order
+db.inventory.find( { "instock": { warehouse: "A", qty: 5 } } )
+
+//problem 
+db.inventory.find( { "instock": { qty: 5, warehouse: "A", } } )
+
+db.inventory.find( { 
+    "instock.qty":5,
+    "instock.warehouse":"A",
+});
+
+db.inventory.find( { "instock": { $elemMatch: { qty: 5, warehouse: "A" } } } )
+
+db.inventory.find( { 'instock.0.qty': { $lte: 20 } } )
+
+//Problem
+db.inventory.find( { "instock.qty": { $gt: 10,  $lte: 20 } } )
+
+//project
+
+db.inventory.find({},{"item":1})
+
+db.inventory.find({},{"item":0})
+
+db.inventory.find( { status: "A" }, { item: 1, status: 1, _id: 0 } )

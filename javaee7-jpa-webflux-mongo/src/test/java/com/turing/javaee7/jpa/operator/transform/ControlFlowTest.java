@@ -4,7 +4,7 @@ import java.time.Duration;
 
 import org.junit.jupiter.api.Test;
 
-import com.turing.javaee7.jpa.DealyUtil;
+import com.turing.javaee7.jpa.DelayUtil;
 
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
@@ -56,7 +56,7 @@ public class ControlFlowTest {
 			});
 		
 		result.subscribe();
-		DealyUtil.delay(3000);
+		DelayUtil.delay(3000);
 		//StepVerifier.create(list1).expectNextCount(1).verifyComplete();
 		//StepVerifier.create(result).expectNextCount(1).verifyComplete();
 		
