@@ -27,6 +27,7 @@ public class MovieDto {
     private Integer year;
 
     @NotNull
+    @NotBlank(message="Director name must not be blank")
     private String director;
     
     //@NotNull
@@ -34,6 +35,7 @@ public class MovieDto {
     
     MovieDetailsDto details;
     
+    @NotNull(message="Genres name must not be blank")
     ArrayList<String> genres;
     
     private List<ActorDto> actors;

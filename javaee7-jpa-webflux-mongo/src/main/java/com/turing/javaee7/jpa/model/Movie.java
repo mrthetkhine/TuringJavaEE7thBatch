@@ -46,6 +46,6 @@ public class Movie {
     
     //Reference model
     @DBRef
-    private List<Actor> actors;
+    private List<Actor> actors = new ArrayList<>();
     
 }

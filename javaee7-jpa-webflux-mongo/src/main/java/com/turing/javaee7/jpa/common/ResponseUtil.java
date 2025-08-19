@@ -3,6 +3,10 @@ package com.turing.javaee7.jpa.common;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+
+import java.util.ArrayList;
 import java.util.List;
 import com.turing.javaee7.jpa.dto.RestResponse;
 
@@ -14,10 +18,9 @@ import reactor.core.publisher.Mono;
 @Component
 public class ResponseUtil {
 	
-	public <T> Mono<ResponseEntity<RestResponse<T>>> succesResponse(HttpStatus statusCode, String message, T data)
+	public Mono<ResponseEntity<RestResponse>> succesResponse(HttpStatus statusCode, String message, Object data)
 	{
-		log.info("Data "+ data);
-		RestResponse<T> response =new RestResponse<T>();
+		RestResponse response =new RestResponse();
 		response.setMessage(message);
 		response.setData(data);
 		ResponseEntity re = ResponseEntity.status(statusCode)
@@ -25,12 +28,26 @@ public class ResponseUtil {
 		return Mono.just(re);
 		
 	}
-	
-	public <T> Mono<ResponseEntity<RestResponse>> errorResponse(HttpStatus statusCode, String message, T error)
+	public Mono<ResponseEntity<RestResponse>> errorResponse(HttpStatus statusCode, String message, Object error)
 	{
-		RestResponse<T> response =new RestResponse<T>();
+		RestResponse response =new RestResponse();
 		response.setMessage(message);
 		response.setError(error);
+		ResponseEntity re = ResponseEntity.status(statusCode)
+								.body(response);
+		return Mono.just(re);
+		
+	}
+	public Mono<ResponseEntity<RestResponse>> validationErrorResponse(HttpStatus statusCode, String message,List<ObjectError> errors)
+	{
+		 List<String> errorMessage =new ArrayList<String>();
+	    for (ObjectError error : errors)
+	    {
+	    	errorMessage.add(error.getDefaultMessage());
+	    }
+		RestResponse response =new RestResponse();
+		response.setMessage(message);
+		response.setError(errorMessage);
 		ResponseEntity re = ResponseEntity.status(statusCode)
 								.body(response);
 		return Mono.just(re);
