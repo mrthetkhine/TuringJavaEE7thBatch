@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.turing.javaee7.jpa.common.Mapper;
 import com.turing.javaee7.jpa.dto.MovieDto;
 import com.turing.javaee7.jpa.model.Movie;
+import com.turing.javaee7.jpa.model.Review;
 import com.turing.javaee7.jpa.repository.ActorRepository;
 import com.turing.javaee7.jpa.repository.MovieRepository;
 import com.turing.javaee7.jpa.repository.ReviewRepository;
@@ -14,6 +15,10 @@ import com.turing.javaee7.jpa.service.MovieService;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.util.function.Tuple2;
+import reactor.util.function.Tuples;
+
+import java.util.List;
 
 @Slf4j
 @Service
@@ -98,22 +103,39 @@ public class MovieServiceImpl implements MovieService{
 				})
 				.map(model->this.mapper.map(model, MovieDto.class));
 	}
+	public Tuple2<Movie,Float> getMovieWithAverageRating(List<Review> reviewList)
+	{
+		float average = 0;
+		for(Review rev : reviewList)
+		{
+			average += rev.getRating();
+		}
+		Movie movie = reviewList.get(0).getMovie();
+		Tuple2<Movie,Float> result = Tuples.of(movie, average/ reviewList.size());
+		
+		return result;
+	}
 	@Override
 	public Flux<MovieDto> getMovieWithAverageRatingGte(double rating) {
 		return this.reviewRepository
 			.findAll()
 			.groupBy(review->review.getMovie().getId())
-			.flatMap(group->{ //movieId, review list[]
-				log.info("Movie Key "+group.key() );
-				group
-					//.reduce(null, null)
-					.collectList()
-					.map(reviews->{
-						log.info("Reviews "+reviews );
-						return reviews;
-					}).subscribe();
-				return Mono.empty();
-			});
+			.flatMap(group->group.collectList())
+			.map(reviewList->this.getMovieWithAverageRating(reviewList))
+			.filter(tuple->tuple.getT2()>=rating)
+			.map(tuple->{
+				log.info("Tuple movie "+tuple.getT1().getName() +" Avg Rating "+tuple.getT2());
+				return tuple.getT1();
+			})
+			.map(movie->this.mapper.map(movie, MovieDto.class));
+			
 		//return null;
+	}
+	@Override
+	public Flux<MovieDto> getMovieWithActorIn(String firstName) {
+		
+		return this.movieRepository
+				.getAllMovieWithLookup(firstName)
+				.map(movie->this.mapper.map(movie, MovieDto.class));
 	}
 }

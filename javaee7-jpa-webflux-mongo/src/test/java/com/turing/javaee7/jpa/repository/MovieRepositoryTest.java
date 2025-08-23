@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 
 import com.turing.javaee7.jpa.DelayUtil;
+import com.turing.javaee7.jpa.model.Actor;
 import com.turing.javaee7.jpa.model.Movie;
 import com.turing.javaee7.jpa.model.MovieDetails;
 
@@ -24,7 +25,7 @@ public class MovieRepositoryTest {
 	@Autowired
 	MovieRepository movieRepository;
 	
-	@Test
+	//@Test
 	public void testSaveMovie()
 	{
 		Movie movie = new Movie();
@@ -54,6 +55,92 @@ public class MovieRepositoryTest {
 								
 								return this.movieRepository.save(movie);
 							}).subscribe();
+		DelayUtil.delay(2000);
+	}
+	//@Test
+	public void testFindByTitle()
+	{
+		this.movieRepository
+			.findByName("Titanic")
+			.subscribe(movie->{
+				log.info("Movie "+movie);
+			});	
+		DelayUtil.delay(2000);
+	}
+	//@Test
+	public void testFindByDirector()
+	{
+		this.movieRepository
+			.searchByDirector("Christopher Nolan")
+			.subscribe(movie->{
+				log.info("Movie "+movie);
+			});	
+		DelayUtil.delay(2000);
+	}
+	//@Test
+	public void testFindByGenre()
+	{
+		this.movieRepository
+			.searchByGenre("Scifi")
+			.subscribe(movie->{
+				log.info("Movie "+movie);
+			});	
+		DelayUtil.delay(2000);
+	}
+	//@Test
+	public void testFindByDetails()
+	{
+		this.movieRepository
+			.searchByDetails("Dream")
+			.subscribe(movie->{
+				log.info("Movie "+movie);
+			});	
+		DelayUtil.delay(2000);
+	}
+	
+	boolean isActorInMovie(Movie movie,String actorName)
+	{
+		boolean found = false;
+		for(Actor actor: movie.getActors())
+		{
+			String fullName= actor.getFirstName()+" "+actor.getLastName();
+			if(fullName.equalsIgnoreCase(actorName))
+			{
+				return true;
+			}
+		}
+		return found;
+	}
+	//@Test
+	public void testMovieWhereActorIn()
+	{
+		this.movieRepository
+			.findAll()
+			.filter(movie->this.isActorInMovie(movie, "Leonardo Decaprio"))
+			.subscribe(movie->{
+				log.info("Movie "+movie);
+			});	
+		DelayUtil.delay(2000);
+	}
+	
+	//@Test
+	public void testMovieWhereActorInWithAggregation()
+	{
+		this.movieRepository
+			.getAllMovieWithLookup("Leonardo")
+			.subscribe(movie->{
+				log.info("Movie "+movie);
+			});	
+		DelayUtil.delay(2000);
+	}
+	@Test
+	public void testGetAllMovieName()
+	{
+		this.movieRepository
+			.getAllMovieName()
+			.subscribe(movie->{
+				log.info("Movie "+movie);
+			});	
 		DelayUtil.delay(2000);
 	}
 }

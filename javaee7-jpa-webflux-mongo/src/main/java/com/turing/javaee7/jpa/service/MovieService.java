@@ -12,5 +12,6 @@ public interface MovieService {
 	Mono<MovieDto> assignActorToMovie(String movieId,String actorId);
 	
 	Flux<MovieDto> getMovieWithAverageRatingGte(double rating);
+	Flux<MovieDto> getMovieWithActorIn(String firstName);
 	
 }

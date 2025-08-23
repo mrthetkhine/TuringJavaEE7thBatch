@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.turing.javaee7.jpa.common.ResponseUtil;
@@ -43,6 +44,20 @@ public class MovieApi {
 	Mono<ResponseEntity<RestResponse>> getAllMovies()
 	{
 		return this.movieService.getAllMovies()
+								.collectList()
+								.flatMap(data->responseUtil.succesResponse(HttpStatus.OK, "Success", data));
+	}
+	@GetMapping(value="average_rating")
+	Mono<ResponseEntity<RestResponse>> getMovieWithAverageRatingGte(@RequestParam double rating)
+	{
+		return this.movieService.getMovieWithAverageRatingGte(rating)
+								.collectList()
+								.flatMap(data->responseUtil.succesResponse(HttpStatus.OK, "Success", data));
+	}
+	@GetMapping(value="actors")
+	Mono<ResponseEntity<RestResponse>> getMovieWithActorIn(@RequestParam String name)
+	{
+		return this.movieService.getMovieWithActorIn(name)
 								.collectList()
 								.flatMap(data->responseUtil.succesResponse(HttpStatus.OK, "Success", data));
 	}

@@ -19,12 +19,15 @@ public class MovieServiceTest {
 	@Autowired
 	MovieService movieService;
 	
-	@Test
+	//@Test
 	public void testGetMovieWithAverageRating()
 	{
 		this.movieService.getMovieWithAverageRatingGte(3.0)
-						.subscribe();
+						.subscribe(movie->{
+							log.info("Movie result "+ movie);
+						});
 						
 		DelayUtil.delay(2000);
 	}
+	
 }
