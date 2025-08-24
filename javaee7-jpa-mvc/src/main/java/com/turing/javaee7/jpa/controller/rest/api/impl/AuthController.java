@@ -30,7 +30,7 @@ public class AuthController {
 		log.info("Thread Name " + Thread.currentThread().getName());
 		try
 		{
-			Thread.sleep(3000);
+			Thread.sleep(10_000);
 		}
 		catch(Exception e)
 		{
