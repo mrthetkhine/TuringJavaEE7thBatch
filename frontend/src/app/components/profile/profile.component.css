@@ -1,0 +1,14 @@
+.profile-container
+{
+  max-width: 100px;
+}
+.profile-image
+{
+  width: 100%;
+  border-radius: 50%;
+}
+.profile-name
+{
+  text-align: center;
+
+}

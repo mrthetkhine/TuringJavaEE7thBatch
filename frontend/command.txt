@@ -1,0 +1,13 @@
+ng new frontend
+cd frontend
+npm install
+
+//run
+npm start
+
+//generate component
+ng generate c components/HelloWorld
+ng generate c components/Profile
+ng generate c components/Greeting
+ng generate c components/TrimMessage
+ng generate c components/Counter
