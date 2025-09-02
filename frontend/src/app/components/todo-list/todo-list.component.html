@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <input type="text" [(ngModel)]="newTodo" />
+    <button type="button" (click)="addNewTodo()">Add</button>
+  </div>
+  <div>
+    @for (item of items; let idx = $index;track idx) {
+      <app-todo-item [name]="item"
+                     [index]="idx"
+                     (itemDelete)="itemDelete($event)"/>
+    }
+  </div>
+
+</div>

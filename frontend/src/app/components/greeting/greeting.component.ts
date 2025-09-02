@@ -9,4 +9,9 @@ import {Component, Input} from '@angular/core';
 })
 export class GreetingComponent {
   @Input() message: string ='';
+
+  public get data()
+  {
+    return this.message;
+  }
 }
