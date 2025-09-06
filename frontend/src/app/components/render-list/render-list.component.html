@@ -1,0 +1,10 @@
+<div>
+  @for (item of items;track $index) {
+    <div>
+      {{item}}
+    </div>
+  } @empty {
+    <div> List is empty</div>
+  }
+  <button type="button" (click)="resetList()">Reset</button>
+</div>

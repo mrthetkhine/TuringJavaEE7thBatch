@@ -14,6 +14,18 @@ import {LayoutFooterComponent} from "./components/layout-footer/layout-footer.co
 import {FactorialInputComponent} from "./components/factorial-input/factorial-input.component";
 import {ViewChildDemoComponent} from "./components/view-child-demo/view-child-demo.component";
 import {ContentChildDemoComponent} from "./components/content-child-demo/content-child-demo.component";
+import {NativeDemoComponent} from "./components/native-demo/native-demo.component";
+import {DynamicDemoComponent} from "./components/dynamic-demo/dynamic-demo.component";
+import {ViewContainerRefDemoComponent} from "./components/view-container-ref-demo/view-container-ref-demo.component";
+import {TemplateDemoComponent} from "./components/template-demo/template-demo.component";
+import {TwoWayBindingDemoComponent} from "./components/two-way-binding-demo/two-way-binding-demo.component";
+import {
+  CrossTwoWayBindingDemoComponent
+} from "./components/cross-two-way-binding-demo/cross-two-way-binding-demo.component";
+import {ControlFlowDemoComponent} from "./components/control-flow-demo/control-flow-demo.component";
+import {RenderListComponent} from "./components/render-list/render-list.component";
+import {SwitchDemoComponent} from "./components/switch-demo/switch-demo.component";
+import {PipeDemoComponent} from "./components/pipe-demo/pipe-demo.component";
 
 @Component({
   selector: 'app-root',
@@ -34,7 +46,16 @@ import {ContentChildDemoComponent} from "./components/content-child-demo/content
     FactorialInputComponent,
     ViewChildDemoComponent,
     ContentChildDemoComponent,
-
+    NativeDemoComponent,
+    DynamicDemoComponent,
+    ViewContainerRefDemoComponent,
+    TemplateDemoComponent,
+    TwoWayBindingDemoComponent,
+    CrossTwoWayBindingDemoComponent,
+    ControlFlowDemoComponent,
+    RenderListComponent,
+    SwitchDemoComponent,
+    PipeDemoComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

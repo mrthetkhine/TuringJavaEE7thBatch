@@ -1,0 +1,17 @@
+<div>
+  Input<input type="text" [(ngModel)]="data"/>
+  <br/>
+  <div>
+    Data is {{data}}
+  </div>
+  <div>
+    Control flow
+    @if (data >= 10) {
+      {{data}} is greater than equal {{10}}
+    }@else if(data >= 5){
+      {{data}} is >=  {{5}}
+    }@else{
+      <p>{{data}} is less than {{5}}</p>
+    }
+  </div>
+</div>

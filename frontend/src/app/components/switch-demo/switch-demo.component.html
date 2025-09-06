@@ -1,0 +1,15 @@
+<div>
+  is Admin {{isAdmin}}
+  <div>
+    @switch (isAdmin)
+    {
+      @case (true){
+        <app-admin/>
+      }
+      @case (false){
+        <app-user/>
+      }
+    }
+  </div>
+  <button type="button" (click)="toggle()">Toggle</button>
+</div>

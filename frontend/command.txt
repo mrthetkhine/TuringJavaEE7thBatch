@@ -11,3 +11,4 @@ ng generate c components/Profile
 ng generate c components/Greeting
 ng generate c components/TrimMessage
 ng generate c components/Counter
+ng generate c components/NativeDemo

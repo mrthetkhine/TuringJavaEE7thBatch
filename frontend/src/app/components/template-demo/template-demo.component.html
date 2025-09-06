@@ -1,0 +1,15 @@
+<div (click)="handleEvent($event)"
+      (contextmenu)="handleRightClickEvent($event)">
+  Static
+  <br/>
+  Dynamic
+  <button disabled="disabledFlag">Disabled</button>
+  <button [disabled]="disabledFlag">[disabled]</button>
+  <br/>
+  <button type="button" (click)="toggle()">Toggle Active</button>
+  <div [class.active]="active"
+       [style.height.px]="height"
+       [style]="sectionStyles()">
+    Container
+  </div>
+</div>
