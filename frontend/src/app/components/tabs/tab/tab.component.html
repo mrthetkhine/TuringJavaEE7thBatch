@@ -1,0 +1,14 @@
+<div class="tab-container">
+  <div class="tab-header-container">
+    @for(header of headers();track $index){
+      <div class="tab-header" (click)="showPage($index)">
+        {{header}}
+      </div>
+    }
+  </div>
+  <div class="tab-body">
+    <ng-content>
+
+    </ng-content>
+  </div>
+</div>

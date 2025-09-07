@@ -1,0 +1,35 @@
+
+<div>
+
+  @defer {
+    <app-large-component />
+  }@loading {
+    <div >Loading </div>
+  } @placeholder (minimum 500ms) {
+    <p>Place holder large component</p>
+  }
+  <div>
+    This is string {{"Hello".toLowerCase()}} Another {{'hello'.toUpperCase()}}
+  </div>
+  <div>
+    Boolean {{true}}
+  </div>
+  <div>
+    Object {{ {name:'TK',age:41}.name }}
+  </div>
+  <div>
+    Array {{ ['Apple','Orange','Banan'] }}
+  </div>
+  <div>
+
+  </div>
+  Admin <input type="checkbox" [(ngModel)]="isAdmin" />
+  <ng-template #basic>
+    <p>User template fragment</p>
+  </ng-template>
+  <ng-template #admin>
+    <p>Admin template fragment</p>
+  </ng-template>
+  Here is ng-container
+  <ng-container [ngTemplateOutlet]="getTemplate()"></ng-container>
+</div>

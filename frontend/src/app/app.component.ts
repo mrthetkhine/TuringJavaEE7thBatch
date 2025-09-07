@@ -26,6 +26,11 @@ import {ControlFlowDemoComponent} from "./components/control-flow-demo/control-f
 import {RenderListComponent} from "./components/render-list/render-list.component";
 import {SwitchDemoComponent} from "./components/switch-demo/switch-demo.component";
 import {PipeDemoComponent} from "./components/pipe-demo/pipe-demo.component";
+import {NgTemplateDemoComponent} from "./components/ng-template-demo/ng-template-demo.component";
+import {ContainerDemoComponent} from "./components/container-demo/container-demo.component";
+import {InlineTemplateComponent} from "./components/inline-template/inline-template.component";
+import {WhiteSpaceComponent} from "./components/white-space/white-space.component";
+import {TabDemoComponent} from "./components/tabs/tab-demo/tab-demo.component";
 
 @Component({
   selector: 'app-root',
@@ -56,6 +61,11 @@ import {PipeDemoComponent} from "./components/pipe-demo/pipe-demo.component";
     RenderListComponent,
     SwitchDemoComponent,
     PipeDemoComponent,
+    NgTemplateDemoComponent,
+    ContainerDemoComponent,
+    InlineTemplateComponent,
+    WhiteSpaceComponent,
+    TabDemoComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

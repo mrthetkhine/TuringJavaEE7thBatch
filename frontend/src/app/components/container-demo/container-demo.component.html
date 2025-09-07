@@ -1,0 +1,12 @@
+<div>
+  Container
+  <ng-container>
+    <h1>Name</h1>
+    <p>Address</p>
+  </ng-container>
+  <div>
+    <span class="layout-header" (click)="changePage(0)">Page1</span>
+    <span class="layout-header" (click)="changePage(1)">Page2</span>
+  </div>
+  <ng-container *ngComponentOutlet="getPage()" /> `
+</div>

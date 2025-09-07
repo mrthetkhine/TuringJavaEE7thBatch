@@ -12,3 +12,5 @@ ng generate c components/Greeting
 ng generate c components/TrimMessage
 ng generate c components/Counter
 ng generate c components/NativeDemo
+ng generate c components/NgTemplateDemo
+ng generate c components/tabs/Tab
