@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {HelloWorldComponent} from "./components/hello-world/hello-world.component";
 import {ProfileComponent} from "./components/profile/profile.component";
 import {GreetingComponent} from "./components/greeting/greeting.component";
 import {TrimMessageComponent} from "./components/trim-message/trim-message.component";
 import {CounterComponent} from "./components/counter/counter.component";
-import {TodoListComponent} from "./components/todo-list/todo-list.component";
+import {TodoListComponent as OriginalTodoList} from "./components/todo-list/todo-list.component";
 import {BorderComponent} from "./components/border/border.component";
 import {LayoutComponent} from "./components/layout/layout.component";
 import {LayoutHeaderComponent} from "./components/layout-header/layout-header.component";
@@ -31,18 +31,22 @@ import {ContainerDemoComponent} from "./components/container-demo/container-demo
 import {InlineTemplateComponent} from "./components/inline-template/inline-template.component";
 import {WhiteSpaceComponent} from "./components/white-space/white-space.component";
 import {TabDemoComponent} from "./components/tabs/tab-demo/tab-demo.component";
+import {DirectiveDemoComponent} from "./components/directive-demo/directive-demo.component";
+import {TodoListComponent} from "./components/todos/todo-list/todo-list.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    RouterLink,
+    RouterLinkActive,
     RouterOutlet,
     HelloWorldComponent,
     ProfileComponent,
     GreetingComponent,
     TrimMessageComponent,
     CounterComponent,
-    TodoListComponent,
+    OriginalTodoList,
     BorderComponent,
     LayoutComponent,
     LayoutHeaderComponent,
@@ -66,6 +70,8 @@ import {TabDemoComponent} from "./components/tabs/tab-demo/tab-demo.component";
     InlineTemplateComponent,
     WhiteSpaceComponent,
     TabDemoComponent,
+    DirectiveDemoComponent,
+    TodoListComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

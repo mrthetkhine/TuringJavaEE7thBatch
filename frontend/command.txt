@@ -14,3 +14,16 @@ ng generate c components/Counter
 ng generate c components/NativeDemo
 ng generate c components/NgTemplateDemo
 ng generate c components/tabs/Tab
+ng generate c components/DirectiveDemo
+ng generate directive highlight
+ng generate service services/Logger
+ng generate class models/Todo
+ng generate service services/Todo
+ng generate c components/todos/TodoList
+ng generate c pages/HomePage
+ng generate c pages/IndexPage
+ng generate module heavy  --routing
+ng generate component heavy/LazyPage --module=heavy
+ng generate c pages/MovieListPage
+ng generate guard guards/Auth
+ng generate resolver /resolver/User

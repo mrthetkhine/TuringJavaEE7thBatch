@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {TabComponent} from "../tab/tab.component";
 import {TabPageComponent} from "../tab-page/tab-page.component";
+import {LoggerService} from "../../../services/logger.service";
 
 @Component({
   selector: 'app-tab-demo',
@@ -14,4 +15,9 @@ import {TabPageComponent} from "../tab-page/tab-page.component";
 })
 export class TabDemoComponent {
   headers = ["Page1 ","Page 2","Page 3"];
+  loggerService =inject(LoggerService);
+
+  constructor() {
+    this.loggerService.log("Tab created");
+  }
 }
