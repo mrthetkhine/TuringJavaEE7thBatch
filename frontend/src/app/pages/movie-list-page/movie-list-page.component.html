@@ -1,2 +1,81 @@
-<p>movie-list-page works!</p>
-<router-outlet />
+<div>
+  <div>
+    <form #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm)">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title: </label>
+        <input id="title" type="text"  class="form-control"
+               [(ngModel)]="movie.title"
+               required
+               name="title"
+               #title="ngModel"/>
+        <div [hidden]="title.valid || title.pristine"
+             class="alert alert-danger">
+          Title is required
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="year" class="form-label">Year: </label>
+        <input id="year"
+               type="number"  class="form-control"
+               [(ngModel)]="movie.year"
+               name="year"
+               required
+               min="1900"
+               max="2025"
+               #year="ngModel"/>
+        <div [hidden]="year.valid || year.pristine"
+             class="alert alert-danger">
+
+          <div *ngIf="year.errors?.['required']"> Year is required.</div>
+          <div *ngIf="year.errors?.['min']">Year must be at least 1900.</div>
+          <div *ngIf="year.errors?.['max']">Year cannot exceed 2025.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="director" class="form-label">Director: </label>
+        <input id="director" type="text"  class="form-control"
+               [(ngModel)]="movie.director"
+               name="director"
+               required
+               #director="ngModel"/>
+        <div [hidden]="director.valid || director.pristine"
+             class="alert alert-danger">
+          Director is required
+        </div>
+      </div>
+      <div class="mb-3">
+        <button type="button" (click)="addNewGenre()"
+                class="btn btn-primary col-md-2">New Genre</button>
+      </div>
+      <div class="mb-3">
+        @for(genre of movie.genres;let i=$index;track i){
+          <div class="mb-3 row">
+
+            <label for="genre" class="form-label col-md-2">Genre: </label>
+            <div class="col-md-6">
+              <input id="genre"
+                     type="text"
+                     class="form-control"
+                     [(ngModel)]="movie.genres[i]"
+                     name="genres_{{i}}"
+                     required
+              />
+            </div>
+
+            <button type="button" (click)="removeGenre(i)"
+                    class="btn btn-primary col-md-2">Remove</button>
+          </div>
+        }
+        <!--<div *ngFor="let genre of movie.genres; let i = index">
+          <label>Item {{ i + 1 }}:</label>
+          <input type="text" [(ngModel)]="data.items[i]" name="item_{{i}}" required>
+          <button type="button" (click)="removeItem(i)">Remove</button>
+        </div>-->
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary" [disabled]="!movieForm.valid">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

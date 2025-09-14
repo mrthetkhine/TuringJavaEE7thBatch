@@ -45,6 +45,13 @@ export class LoginPageComponent {
   {
     console.log('submit ',this.loginForm.value);
   }
+  updateUser()
+  {
+    //this.loginForm.get('username')?.setValue('Admin');
+    this.loginForm.patchValue({
+      username:'Dummy',
+    })
+  }
   clear()
   {
     this.loginForm.reset();

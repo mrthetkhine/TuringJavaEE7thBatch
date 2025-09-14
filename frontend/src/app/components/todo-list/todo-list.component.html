@@ -1,7 +1,7 @@
 <div>
   <div>
-    <input type="text" [(ngModel)]="newTodo" />
-    <button type="button" (click)="addNewTodo()">Add</button>
+    <input type="text" [(ngModel)]="newTodo" class="form-control" />
+    <button type="button" (click)="addNewTodo()" class="btn btn-success">Add</button>
   </div>
   <div>
     @for (item of items; let idx = $index;track idx) {

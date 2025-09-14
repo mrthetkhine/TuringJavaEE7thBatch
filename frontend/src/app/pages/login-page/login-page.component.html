@@ -2,7 +2,7 @@
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="mb-3">
       <label for="username" class="form-label">Username: </label>
-      <input id="username" type="text" formControlName="username" class="form-control" />
+      <input id="username" type="text" formControlName="username" class="form-control"/>
       @if (username!.invalid && (username!.dirty || username!.touched)) {
         <div class="alert alert-danger">
           @if (username!.hasError('required')) {
@@ -43,7 +43,7 @@
     <div class="mb-3">
       <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Login</button>
       <button type="button" class="btn btn-success" (click)="clear()">Clear</button>
-
+      <button type="button" class="btn btn-success" (click)="updateUser()">Update</button>
     </div>
 
 
