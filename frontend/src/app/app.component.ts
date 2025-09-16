@@ -33,6 +33,7 @@ import {WhiteSpaceComponent} from "./components/white-space/white-space.componen
 import {TabDemoComponent} from "./components/tabs/tab-demo/tab-demo.component";
 import {DirectiveDemoComponent} from "./components/directive-demo/directive-demo.component";
 import {TodoListComponent} from "./components/todos/todo-list/todo-list.component";
+import {TodoCountComponent} from "./components/todos/todo-count/todo-count.component";
 
 @Component({
   selector: 'app-root',
@@ -72,6 +73,7 @@ import {TodoListComponent} from "./components/todos/todo-list/todo-list.componen
     TabDemoComponent,
     DirectiveDemoComponent,
     TodoListComponent,
+    TodoCountComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

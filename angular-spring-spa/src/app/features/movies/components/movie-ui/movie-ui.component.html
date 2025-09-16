@@ -1,0 +1,25 @@
+<div class="card" style="width: 18rem;">
+  <img src="https://i0.wp.com/www.ucreative.com/wp-content/uploads/2009/11/closer.jpg?w=660&ssl=1" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">
+      {{movie().name}}
+    </h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">
+      Year {{movie().year}}
+    </h6>
+    <h6 class="card-subtitle mb-2 text-body-secondary">
+      Director {{movie().director}}
+    </h6>
+    <p class="card-text">
+      {{movie().details}}
+    </p>
+    <ul>
+      @for(genre of movie().genres;track genre){
+        <ol>{{genre}}</ol>
+      }
+    </ul>
+    <button tpye="button" class="btn btn-primary" (click)="goToMovieDetails()">
+      Details
+    </button>
+  </div>
+</div>

@@ -10,7 +10,8 @@ import {MovieEditPageComponent} from "./pages/movie-edit-page/movie-edit-page.co
 import {authGuard} from "./guards/auth.guard";
 import {LoginPageComponent} from "./pages/login-page/login-page.component";
 import {userResolver} from "./resolver/user.resolver";
-import {TodoListComponent} from "./components/todo-list/todo-list.component";
+import {TodoListComponent} from "./components/todos/todo-list/todo-list.component";
+
 
 export const routes: Routes = [
   {

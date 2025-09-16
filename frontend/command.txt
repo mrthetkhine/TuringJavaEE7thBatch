@@ -27,3 +27,5 @@ ng generate component heavy/LazyPage --module=heavy
 ng generate c pages/MovieListPage
 ng generate guard guards/Auth
 ng generate resolver /resolver/User
+ng generate c components/todos/TodoCount
+ng generate service services/ReactiveTodo
