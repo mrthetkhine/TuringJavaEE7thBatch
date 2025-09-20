@@ -47,8 +47,11 @@ public class WebConfig {
                         .configurationSource(corsConfigurationSource()))
 				.authorizeExchange(
 						exchanges -> 
-							exchanges.pathMatchers(HttpMethod.POST, "/api/login")
-								.permitAll()
+							exchanges
+							.pathMatchers(HttpMethod.POST, "/api/login")
+							.permitAll()
+							//.pathMatchers(HttpMethod.GET, "/api/movies")
+							//.permitAll()
 								
 	
 								

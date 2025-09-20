@@ -1,0 +1,39 @@
+<div class="container container-fluid">
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username: </label>
+      <input id="username" type="text" formControlName="username" class="form-control"/>
+      @if (username!.invalid && (username!.dirty || username!.touched)) {
+        <div class="alert alert-danger">
+          @if (username!.hasError('required')) {
+            <div>
+              Username is required.
+            </div>
+          }
+
+
+        </div>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password: </label>
+      <input id="password" type="password" formControlName="password" class="form-control"/>
+      @if (password!.invalid && (password!.dirty || password!.touched)) {
+        <div class="alert alert-danger">
+          @if (password!.hasError('required')) {
+            <div>
+              Password is required.
+            </div>
+          }
+
+
+        </div>
+      }
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-success" [disabled]="!authForm.valid">Submit</button>
+
+    </div>
+  </form>
+</div>
+

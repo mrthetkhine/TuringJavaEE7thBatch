@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="card" style="width: 18rem;">
+    <app-movie-ui [movie]="movie()"/>
+    @for(actor of movie().actors;track actor){
+      <app-actor-ui [actor]="actor"/>
+    }
+  </div>
+</div>
+

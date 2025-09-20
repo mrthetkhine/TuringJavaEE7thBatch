@@ -1,59 +1,37 @@
-import { Injectable } from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 import {Movie} from "../model/movie.model";
+import { HttpClient } from '@angular/common/http';
+import {BehaviorSubject} from "rxjs";
+import {API_URL} from "../Config";
+import {ApiResponse} from "../model/api-response.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
 
-  _movies: Movie[] = [
-    {
-      "id": "68a1dcd355cff54a490a5d8f",
-      "name": "Titanic",
-      "year": 2020,
-      "director": "James Cameron",
-      "details": "Drama of sinking ship",
-      "genres": [
-        "Drama"
-      ],
-      "actors": [
-        {
-          "id": "68a083e9a3ee5ecf75cc1a0b",
-          "firstName": "Leonardo",
-          "lastName": "Decaprio",
-          "gender": "Male"
-        },
-        {
-          "id": "68a0845ef589a3b9b1ac36c2",
-          "firstName": "Kate",
-          "lastName": "Winselect",
-          "gender": "Female"
-        }
-      ]
-    },
-    {
-      "id": "68a47945ddc8cb87043e21dd",
-      "name": "Insepection",
-      "year": 2005,
-      "director": "Christopher Nolan",
-      "details": "Dream about dream",
-      "genres": [
-        "Scifi"
-      ],
-      "actors": [
-        {
-          "id": "68a083e9a3ee5ecf75cc1a0b",
-          "firstName": "Leonardo",
-          "lastName": "Decaprio",
-          "gender": "Male"
-        }
-      ]
-    },
-  ];
-  constructor() { }
+  http = inject(HttpClient);
+  moviesData:Movie[]=[];//store Review data
+
+  moviesSubject = new BehaviorSubject<Movie[]>(this.moviesData);
+  _movies = this.moviesSubject.asObservable();
 
 
-  get movies() {
+  get movies()
+  {
     return this._movies;
+  }
+  loadAllMovies(): void
+  {
+    this.http.get<ApiResponse<Movie[]>>(API_URL+'/api/movies')
+      .subscribe(response=>{
+        this.moviesData = response.data;
+        this.moviesData.forEach((movie:Movie) => {
+          movie.details = (movie.details as any).details;
+        })
+        this.moviesSubject.next(this.moviesData);
+      },error => {
+        console.log(error);
+      });
   }
 }

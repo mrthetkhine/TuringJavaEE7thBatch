@@ -14,7 +14,5 @@ export class MovieUIComponent {
   movie =input.required<Movie>();
 
 
-  goToMovieDetails() {
-    this.router.navigate([`movies/${this.movie().id}`]);
-  }
+
 }
