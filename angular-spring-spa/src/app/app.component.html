@@ -190,18 +190,30 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page"routerLink="/">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link"  routerLink="/movies" routerLinkActive="active">Movies </a>
-            </li>
+            @if(authService.isAuthenticated){
+              <li class="nav-item">
+                <a class="nav-link"  routerLink="/actors" routerLinkActive="active">Actors </a>
+              </li>
+            }
+            @if(authService.isAuthenticated){
+              <li class="nav-item">
+                <a class="nav-link"  routerLink="/movies" routerLinkActive="active">Movies </a>
+              </li>
+            }
             <!-- <li class="nav-item">
                <a class="nav-link"  routerLink="/movies-count" routerLinkActive="active">Movies Count </a>
              </li>-->
-            <li class="nav-item">
-              <a class="nav-link"  routerLink="/logout" routerLinkActive="active">Logout</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"  routerLink="/login" routerLinkActive="active">Login</a>
-            </li>
+            @if(authService.isAuthenticated){
+              <li class="nav-item">
+                <a class="nav-link"  routerLink="/logout" routerLinkActive="active">Logout</a>
+              </li>
+            }
+            @if(!authService.isAuthenticated){
+              <li class="nav-item">
+                <a class="nav-link"  routerLink="/login" routerLinkActive="active">Login</a>
+              </li>
+            }
+
           </ul>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>

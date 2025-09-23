@@ -17,12 +17,18 @@ export class AuthService {
   get isAuthenticated(){
     return !!this.token;
   }
-  login(authUser:AuthUser,callback:()=>void) {
+  login(authUser:AuthUser, successCallback:()=>void,errorCallback:()=>void) {
     this.http.post<ApiResponse<AuthResponse>>(API_URL+'/api/login',authUser)
-    .subscribe(response=>{
-      this.token = response.data.token;
-      console.log('Login success ',response);
-      callback();
-    });
+            .subscribe(response=>{
+              this.token = response.data.token;
+              console.log('Login success ',response);
+              successCallback();
+            },error => {
+              console.log(error);
+              errorCallback();
+            });
+  }
+  logout(){
+    this.token='';
   }
 }

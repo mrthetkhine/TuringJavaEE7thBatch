@@ -1,6 +1,11 @@
+
+
 <div class="container">
   <div class="card" style="width: 18rem;">
     <app-movie-ui [movie]="movie()"/>
+    <div class="container container-fluid">
+      <button type="button" class="btn btn-primary">New Actor</button>
+    </div>
     @for(actor of movie().actors;track actor){
       <app-actor-ui [actor]="actor"/>
     }

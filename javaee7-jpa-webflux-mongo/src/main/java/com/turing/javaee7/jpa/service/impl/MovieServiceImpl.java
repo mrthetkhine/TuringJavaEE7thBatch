@@ -64,6 +64,7 @@ public class MovieServiceImpl implements MovieService{
 					.switchIfEmpty(Mono.error(new RuntimeException("Movie with id "+movieDto.getId()+" not found")))
 					.flatMap(movie->{
 						movie.setName(movieDto.getName());
+						movie.setYear(movieDto.getYear());
 						movie.setCreatedAt(movieDto.getCreatedAt());
 						movie.setGenres(movieDto.getGenres());
 						movie.setDirector(movieDto.getDirector());

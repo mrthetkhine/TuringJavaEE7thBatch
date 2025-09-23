@@ -1,0 +1,90 @@
+<ng-template #actorFormDlg>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">New Actor</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="actorForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="firstName" class="form-label">FirstName: </label>
+        <input id="firstName" type="text" formControlName="firstName" class="form-control"/>
+        @if (firstName!.invalid && (firstName!.dirty || firstName!.touched)) {
+          <div class="alert alert-danger">
+            @if (firstName!.hasError('required')) {
+              <div>
+                First Name is required.
+              </div>
+            }
+
+
+          </div>
+        }
+      </div>
+
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name: </label>
+        <input id="lastName" type="text" formControlName="lastName" class="form-control"/>
+        @if (lastName!.invalid && (lastName!.dirty || lastName!.touched)) {
+          <div class="alert alert-danger">
+            @if (lastName!.hasError('required')) {
+              <div>
+                LastName is required.
+              </div>
+            }
+
+
+          </div>
+        }
+      </div>
+      <div class="mb-3">
+        <label for="gender" class="form-label">Gender: </label>
+        <div class="custom-control custom-radio">
+          <input id="male" type="radio" class="custom-control-input"
+                 value="male"
+                 name="gender"
+                 formControlName="gender">
+          <label class="custom-control-label" for="Male">Male</label>
+        </div>
+
+        <div class="custom-control custom-radio">
+          <input id="female" type="radio" class="custom-control-input"
+                 value="female"
+                 name="gender"
+                 formControlName="gender">
+          <label class="custom-control-label" for="Female">Female</label>
+        </div>
+
+        @if (gender!.invalid && (gender!.dirty || gender!.touched)) {
+          <div class="alert alert-danger">
+            @if (gender!.hasError('required')) {
+              <div>
+                Gender is required.
+              </div>
+            }
+
+
+          </div>
+        }
+      </div>
+
+
+      <div class="mb-3">
+        <button type="submit" class="btn btn-success" [disabled]="!actorForm.valid">Submit</button>
+
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<div class="container container-fluid">
+  <button type="button" class="btn btn-primary" (click)="showNewActorDialog()">
+    New
+  </button>
+</div>
+<div class="container container-fluid">
+  @for (actor of actors; track actor.id) {
+    <app-actor-ui [actor]="actor" />
+  }
+</div>

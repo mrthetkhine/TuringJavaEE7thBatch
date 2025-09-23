@@ -1,47 +1,48 @@
-import {Component, inject} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {Component, inject, viewChild} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 import {Movie} from "../../../../core/model/movie.model";
 import {MovieDetailsComponent} from "../movie-details/movie-details.component";
+import {MovieNewFormDialogComponent} from "../movie-new-form-dialog/movie-new-form-dialog.component";
+import {MovieService} from "../../../../core/services/movie.service";
+import {BsModalService, ModalModule} from "ngx-bootstrap/modal";
+import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-movie-details-page',
   standalone: true,
   imports: [
     MovieDetailsComponent,
+    MovieNewFormDialogComponent,
+    ModalModule,
+    ReactiveFormsModule,
   ],
+  providers: [BsModalService],
   templateUrl: './movie-details-page.component.html',
   styleUrl: './movie-details-page.component.css'
 })
 export class MovieDetailsPageComponent {
+    router = inject(Router);
     route = inject(ActivatedRoute);
+    movieService= inject(MovieService);
     movieId: string ='';
 
-    movie:Movie = {
-      "id": "68a1dcd355cff54a490a5d8f",
-      "name": "Titanic",
-      "year": 2020,
-      "director": "James Cameron",
-      "details": "Drama of sinking ship",
-      "genres": [
-        "Drama"
-      ],
-      "actors": [
-        {
-          "id": "68a083e9a3ee5ecf75cc1a0b",
-          "firstName": "Leonardo",
-          "lastName": "Decaprio",
-          "gender": "Male"
-        },
-        {
-          "id": "68a0845ef589a3b9b1ac36c2",
-          "firstName": "Kate",
-          "lastName": "Winselect",
-          "gender": "Female"
-        }
-      ]
-    };
+    movieNewFormDlg = viewChild<MovieNewFormDialogComponent>('movieNewFormDlg');
+    movie!:Movie;
+
+
     ngOnInit(): void {
       this.movieId = this.route.snapshot.paramMap?.get('id')!;
+      this.movie = this.movieService.getMovieById(this.movieId)!;
       // 'id' is the name of your route parameter as defined in your routing module
     }
+  goToMoviesPage()
+  {
+    this.router.navigate(['movies']);
+  }
+  updateMovieCallBack(updatedMovie: Movie){
+      this.movie = updatedMovie;
+  }
+  showEditMovieModal(){
+      this.movieNewFormDlg()?.showEditDialog(this.updateMovieCallBack.bind(this));
+  }
 }

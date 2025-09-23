@@ -12,3 +12,9 @@ ng generate service core/services/Auth
 ng generate class core/model/AuthUser --type=model
 ng generate class core/model/AuthResponse --type=model
 ng generate interceptor core/interceptor/Token
+ng generate component features/home/components/HomePage
+ng generate guard core/guard/Protected
+ng generate component features/auth/components/Logout
+ng generate class core/model/Common --type=model
+ng generate component features/movies/components/MovieNewFormDialog
+ng generate component features/actors/components/ActorListPage

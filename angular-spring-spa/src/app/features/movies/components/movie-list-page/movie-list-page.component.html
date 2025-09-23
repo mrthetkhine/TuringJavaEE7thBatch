@@ -1,109 +1,9 @@
-<ng-template #movieFormDlg>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">New Movie</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-      <span aria-hidden="true" class="visually-hidden">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
-      <div class="mb-3">
-        <label for="title" class="form-label">Title: </label>
-        <input id="title" type="text" formControlName="title" class="form-control"/>
-        @if (title!.invalid && (title!.dirty || title!.touched)) {
-          <div class="alert alert-danger">
-            @if (title!.hasError('required')) {
-              <div>
-                Title is required.
-              </div>
-            }
-
-
-          </div>
-        }
-      </div>
-
-      <div class="mb-3">
-        <label for="year" class="form-label">Year: </label>
-        <input id="year" type="text" formControlName="year" class="form-control"/>
-        @if (year!.invalid && (year!.dirty || year!.touched)) {
-          <div class="alert alert-danger">
-            @if (year!.hasError('required')) {
-              <div>
-                Year is required.
-              </div>
-            }
-
-
-          </div>
-        }
-      </div>
-      <div class="mb-3">
-        <label for="director" class="form-label">Director: </label>
-        <input id="director" type="text" formControlName="director" class="form-control"/>
-        @if (director!.invalid && (director!.dirty || director!.touched)) {
-          <div class="alert alert-danger">
-            @if (director!.hasError('required')) {
-              <div>
-                Director is required.
-              </div>
-            }
-
-
-          </div>
-        }
-      </div>
-      <div class="mb-3">
-        <label for="details" class="form-label">Details: </label>
-        <input id="details" type="text" formControlName="details" class="form-control"/>
-        @if (details!.invalid && (details!.dirty || details!.touched)) {
-          <div class="alert alert-danger">
-            @if (details!.hasError('required')) {
-              <div>
-                Details is required.
-              </div>
-            }
-
-
-          </div>
-        }
-      </div>
-      <div class="mb-3">
-        <div formArrayName="genres">
-          <div>Genre</div>
-          <button type="button" class="btn btn-primary" (click)="addGenre()">+ Add Genres</button>
-          @for (genre of genres.controls;let i = $index; track genre; ) {
-            <div class="container row">
-              <!-- The repeated alias template -->
-              <label for="genre-{{ i }}"
-                     class="form-label col-md-1">Genre:</label>
-              <input id="genre-{{ i }}" type="text"
-                     class="form-control col-md-2"
-                     [formControlName]="i" />
-              @if (genres.at(i)!.invalid && (genres.at(i)!.dirty || genres.at(i)!.touched)) {
-                <div class="alert alert-danger">
-                  @if (genres.at(i)!.hasError('required')) {
-                    <div> Genre is required</div>
-
-                  }
-                </div>
-              }
-
-              <button type="button" class="btn btn-primary col-md-2" (click)="removeGenre(i)">Remove</button>
-            </div>
-          }
-        </div>
-      </div>
-      <div class="mb-3">
-        <button type="submit" class="btn btn-success" [disabled]="!movieForm.valid">Submit</button>
-
-      </div>
-    </form>
-  </div>
-</ng-template>
+<app-movie-new-form-dialog #movieNewFormDlg>
+</app-movie-new-form-dialog>
 <div class="container">
   <div class="container">
-    <button type="button" class="btn btn-primary" (click)="openModal(movieFormDlg)">New</button>
+    <button type="button" class="btn btn-primary" (click)="openMovieNewForm()">New</button>
+
   </div>
 
 
@@ -111,9 +11,18 @@
     <div class="card" style="width: 18rem;">
 
       <app-movie-ui [movie]="movie"/>
-      <button tpye="button" class="btn btn-primary" (click)="goToMovieDetails(movie)">
-        Details
-      </button>
+      <div>
+        <button tpye="button" class="btn btn-primary" (click)="showDeleteConfirmDlg(movie)">
+          Delete
+        </button>
+        &nbsp;
+        <button tpye="button" class="btn btn-primary" (click)="goToMovieDetails(movie)">
+          Details
+        </button>
+
+
+      </div>
+
     </div>
   }
 </div>
