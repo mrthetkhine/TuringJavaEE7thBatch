@@ -1,0 +1,26 @@
+ng generate component features/movies/components/MovieListPage
+ng generate component features/movies/components/MovieDetailsPage
+ng generate component features/movies/components/MovieDetails
+ng generate class core/model/Movie --type=model
+ng generate service core/services/Movie
+ng generate component features/movies/components/MovieUI
+ng generate component core/components/ActorUi
+ng generate service core/services/Movie
+ng generate class core/model/ApiResponse --type=model
+ng generate component features/auth/components/LoginPage
+ng generate service core/services/Auth
+ng generate class core/model/AuthUser --type=model
+ng generate class core/model/AuthResponse --type=model
+ng generate interceptor core/interceptor/Token
+ng generate component features/home/components/HomePage
+ng generate guard @core/guard/Protected
+ng generate component features/auth/components/Logout
+ng generate class core/model/Common --type=model
+ng generate component features/movies/components/MovieNewFormDialog
+ng generate component features/actors/components/ActorListPage
+ng generate service @core/services/Auth
+ng generate class @core/model/AuthUser --type=model
+ng generate component pages/auth/components/LoginPage
+ng generate component pages/movies/MoviePage
+ng generate interceptor @core/interceptor/TokenInterceptor
+ng generate service @core/services/Message
