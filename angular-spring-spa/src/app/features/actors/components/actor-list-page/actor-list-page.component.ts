@@ -3,6 +3,8 @@ import {Actor} from "../../../../core/model/actor.model";
 import {ActorUiComponent} from "../../../../core/components/actor-ui/actor-ui.component";
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
+import {ActorService} from "../../../../core/services/actor.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-actor-list-page',
@@ -22,6 +24,7 @@ export class ActorListPageComponent {
 
   private formBuilder = inject(FormBuilder);
   actorForm = this.formBuilder.group({
+    id: ['',],
     firstName: ['', [
       Validators.required
     ]
@@ -36,8 +39,9 @@ export class ActorListPageComponent {
     ],
 
   });
+  actorService = inject(ActorService);
   actors: Actor[]= [
-    {
+   /* {
       "id": "68a083e9a3ee5ecf75cc1a0b",
       "firstName": "Leonardo",
       "lastName": "Decaprio",
@@ -54,9 +58,15 @@ export class ActorListPageComponent {
       "firstName": "Keanu",
       "lastName": "Reeves",
       "gender": "Male"
-    },
+    },*/
   ];
+  ngOnInit(): void {
+    this.actorService.actors.subscribe(data=>{
+      this.actors = data;
+    });
+    this.actorService.loadAllActors();
 
+  }
   get firstName() {
     return this.actorForm.get('firstName');
   }
@@ -76,5 +86,17 @@ export class ActorListPageComponent {
   onSubmit()
   {
     console.log('Form ',this.actorForm.value);
+    let actor:Actor = this.actorForm.value as any;
+    this.actorService.saveActor(actor,()=>{
+      this.modalRef?.hide();
+      Swal.fire({
+        title: 'Success!',
+        icon: "success",
+        titleText: 'Actor saved successfully',
+        confirmButtonText: 'Ok'
+      });
+
+      this.actorForm.reset();
+    });
   }
 }

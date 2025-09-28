@@ -3,8 +3,15 @@
 <div class="container">
   <div class="card" style="width: 18rem;">
     <app-movie-ui [movie]="movie()"/>
+    <select class="form-control" [(ngModel)]="selectedActorId">
+    @for(actor of actors;track actor.id) {
+      <option [value]="actor.id">
+        {{actor.firstName +' '+actor.lastName}}
+      </option>
+    }
+    </select>
     <div class="container container-fluid">
-      <button type="button" class="btn btn-primary">New Actor</button>
+      <button type="button" class="btn btn-primary" (click)="assignActorToMovie()">Assign Actor</button>
     </div>
     @for(actor of movie().actors;track actor){
       <app-actor-ui [actor]="actor"/>

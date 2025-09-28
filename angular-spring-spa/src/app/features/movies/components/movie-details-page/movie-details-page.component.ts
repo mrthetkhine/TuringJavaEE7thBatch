@@ -1,11 +1,11 @@
 import {Component, inject, viewChild} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {Movie} from "../../../../core/model/movie.model";
 import {MovieDetailsComponent} from "../movie-details/movie-details.component";
 import {MovieNewFormDialogComponent} from "../movie-new-form-dialog/movie-new-form-dialog.component";
 import {MovieService} from "../../../../core/services/movie.service";
 import {BsModalService, ModalModule} from "ngx-bootstrap/modal";
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
+import {Movie} from "../../../../core/model/movie.model";
 
 @Component({
   selector: 'app-movie-details-page',

@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {Movie} from "../model/movie.model";
+import { Movie} from "../model/movie.model";
 import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject} from "rxjs";
 import {API_URL} from "../Config";
@@ -38,7 +38,7 @@ export class MovieService {
         console.log(error);
       });
   }
-  saveMovie(movie:Movie,successCallback:Callback){
+  saveMovie(movie:Movie, successCallback:Callback){
     let body:any = {
       ... movie,
       details:{
@@ -58,7 +58,7 @@ export class MovieService {
         console.log(error);
       });
   }
-  updateMovie(movie:Movie,successCallback:(updateMovie:Movie) => void){
+  updateMovie(movie:Movie, successCallback:(updateMovie:Movie) => void){
     let body = {
       ... movie,
       details:{
@@ -85,5 +85,13 @@ export class MovieService {
 
       successCallback();
     })
+  }
+  assignActorToMovie(movieId:string,actorId:string,successCallback:(movie:Movie)=>void)
+  {
+    this.http.post<ApiResponse<Movie>>(API_URL+`/api/movies/${movieId}/assignment/actors/${actorId}`,{})
+      .subscribe(response=>{
+        const movie = response.data;
+        successCallback(movie);
+      })
   }
 }
