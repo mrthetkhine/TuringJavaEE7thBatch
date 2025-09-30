@@ -67,7 +67,12 @@ export class MoviePageComponent {
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve();
+      console.log('Delete Event ',event);
+      this.movieService.deleteMovie(event.data?.id,()=>{
+        event.confirm.resolve();
+        this.messageService.showToast('primary','Success','Movie deleted successfully');
+      });
+
     } else {
       event.confirm.reject();
     }
