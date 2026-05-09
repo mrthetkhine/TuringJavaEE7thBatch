@@ -10,7 +10,7 @@ import com.turing.javaee7.mvc.demo.dto.BookDto;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Component
+//@Component
 public class BookValidator implements Validator{
 	@Override
 	public boolean supports(Class<?> clazz) {

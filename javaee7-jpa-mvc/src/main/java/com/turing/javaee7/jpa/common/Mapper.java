@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.modelmapper.config.Configuration.AccessLevel;
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +17,11 @@ public class Mapper {
 	ModelMapper modelMapper = new ModelMapper();
 	public Mapper()
 	{
+		this.modelMapper.getConfiguration()
+		 .setFieldMatchingEnabled(true)
+	      .setFieldAccessLevel(AccessLevel.PRIVATE)
+	      .setMatchingStrategy(MatchingStrategies.STANDARD);
+		
 		log.info("Mapper initialized");
 	}
 	public <S, T> List<T> mapList(List<S> source, Class<T> targetClass) {
